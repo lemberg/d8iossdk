@@ -9,5 +9,17 @@
 #import <Foundation/Foundation.h>
 
 @interface DrupalEntity : NSObject
+//path to object on server (www.servername.com/path/oid)
+@property (strong, nonatomic) NSString *path;
+//identificator to object on server (www.servername.com/path/oid)
+@property (strong, nonatomic) NSString *oid;
+
+- (void)pullFromServer;
+- (void)pushToServer;
+- (void)patchDataServer;
+- (void)deleteFromServer;
+
+//return object in dictionary
+- (NSDictionary *)buildDictionary;
 
 @end
