@@ -125,6 +125,7 @@
 		842C6ED91924DAAC0070751B /* DrupalLib */ = {
 			isa = PBXGroup;
 			children = (
+				842C6EFD1924DAD70070751B /* DrupalSDK.h */,
 				842C6EDC1924DAAC0070751B /* DrupalLib.h */,
 				842C6EDE1924DAAC0070751B /* DrupalLib.m */,
 				9EAE4EC7192A381A00DEB1E5 /* DrupalAPIManager.h */,
@@ -136,7 +137,6 @@
 				9EAE4ED0192A387B00DEB1E5 /* DrupalEntityDeserializer.h */,
 				9EAE4ED1192A387B00DEB1E5 /* DrupalEntityDeserializer.m */,
 				842C6EDA1924DAAC0070751B /* Supporting Files */,
-				842C6EFD1924DAD70070751B /* DrupalSDK.h */,
 			);
 			path = DrupalLib;
 			sourceTree = "<group>";
