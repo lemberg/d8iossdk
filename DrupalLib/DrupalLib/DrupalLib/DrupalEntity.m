@@ -70,4 +70,8 @@
     return dict;
 }
 
+- (NSString *)description {
+    return [NSString stringWithFormat:@"%@ %@ %@", self.oid, self.serverName, self.path];
+}
+
 @end
