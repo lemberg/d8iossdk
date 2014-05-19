@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import <DrupalLib/DrupalSDK.h>
 
 @implementation AppDelegate
 
