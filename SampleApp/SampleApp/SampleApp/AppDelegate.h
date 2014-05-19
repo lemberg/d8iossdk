@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <DrupalLib/DrupalEntity.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
