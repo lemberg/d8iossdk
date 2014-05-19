@@ -7,6 +7,7 @@
 //
 
 #import "DrupalEntity.h"
+#import "DrupalAPIManager.h"
 
 @implementation DrupalEntity
 @synthesize oid = _oid;
