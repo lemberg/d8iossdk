@@ -20,8 +20,10 @@
         if ([properties indexOfObject:key] == NSNotFound)
             continue;
         
-        SEL propSelector = NSSelectorFromString(key);
-        [entity performSelector:propSelector withObject:[params objectForKey:key]];
+        NSString *setterName = [NSString stringWithFormat:@"set%@:", [key stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:[[key substringToIndex:1] capitalizedString]]];
+        SEL setterSelector = NSSelectorFromString(setterName);
+        if ([entity respondsToSelector:setterSelector])
+            [entity performSelector:setterSelector withObject:[params objectForKey:key]];
     }
     return entity;
 }
