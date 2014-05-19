@@ -27,10 +27,10 @@
 
 - (id)initWithServerURL:(NSString *)serverURL;
 
-- (void)pullFromServer;
-- (void)pushToServer;
-- (void)patchDataServer;
-- (void)deleteFromServer;
+- (void)pullFromServerWithDelegate:(id <DrupalEntityDelegate>) delegate;
+- (void)pushToServerWithDelegate:(id <DrupalEntityDelegate>) delegate;
+- (void)patchDataServerWithDelegate:(id <DrupalEntityDelegate>) delegate;
+- (void)deleteFromServerWithDelegate:(id <DrupalEntityDelegate>) delegate;
 
 //return object in dictionary
 - (NSDictionary *)buildDictionary;

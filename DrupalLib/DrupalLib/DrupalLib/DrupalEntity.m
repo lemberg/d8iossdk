@@ -43,19 +43,19 @@
     [DrupalAPIManager sharedDrupalAPIManager].baseURL = [NSURL URLWithString:_serverName];
 }
 
-- (void)pullFromServer {
+- (void)pullFromServerWithDelegate:(id<DrupalEntityDelegate>)delegate {
     [[DrupalAPIManager sharedDrupalAPIManager] getEntity:self];
 }
 
-- (void)pushToServer {
+- (void)pushToServerWithDelegate:(id<DrupalEntityDelegate>)delegate {
     [[DrupalAPIManager sharedDrupalAPIManager] postEntity:self];
 }
 
-- (void)patchDataServer {
+- (void)patchDataServerWithDelegate:(id<DrupalEntityDelegate>)delegate {
     
 }
 
-- (void)deleteFromServer {
+- (void)deleteFromServerWithDelegate:(id<DrupalEntityDelegate>)delegate {
     
 }
 

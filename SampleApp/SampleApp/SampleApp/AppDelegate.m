@@ -11,6 +11,9 @@
 #import <DrupalLib/DrupalEntitySerializer.h>
 #import <DrupalLib/DrupalEntityDeserializer.h>
 #import <DrupalLib/DrupalEntity.h>
+#import <DrupalLib/DrupalAPIManager.h>
+
+#import "Info.h"
 
 @implementation AppDelegate
 
@@ -25,12 +28,18 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    DrupalEntity *de = [DrupalEntity new];
-    de.oid = @"1";
-    de.path = @"fdasfadf";
+    [DrupalAPIManager sharedDrupalAPIManager].baseURL = [NSURL URLWithString:@"http://vh015.uk.dev-ls.co.uk"];
+    
+    Info *de = [[Info alloc] init];
+    de.oid = @"2";
+    de.path = @"node";
+    
+    [de pullFromServer];
+    
     NSDictionary *d = [DrupalEntitySerializer serializeEntity:de];
     DrupalEntity *de1 = [DrupalEntityDeserializer deserializeEntity:de fromDictionary:d];
     DrupalEntity *de2 = [DrupalEntityDeserializer deserializeEntityClass:[DrupalEntity class] fromDictionary:d];
+    
     return YES;
 }
 
