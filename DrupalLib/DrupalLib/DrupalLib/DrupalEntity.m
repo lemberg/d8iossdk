@@ -22,7 +22,7 @@
 - (id)init {
     
     if (self = [super init]) {
-        _drupalApiManager = [[DrupalAPIManager alloc] init];
+
     }
     
     return self;
@@ -30,26 +30,25 @@
 
 - (id)initWithServerURL:(NSString *)serverURL {
     
-    if (self = [self init]) {
+    if (self = [super init]) {
         _serverName = serverURL;
-        _drupalApiManager.baseURL = [NSURL URLWithString:serverURL];
+        [DrupalAPIManager sharedDrupalAPIManager].baseURL = [NSURL URLWithString:serverURL];
     }
     
     return self;
 }
 
 - (void)setServerName:(NSString *)serverName {
-    
     _serverName = serverName;
-    _drupalApiManager.baseURL = [NSURL URLWithString:_serverName];
+    [DrupalAPIManager sharedDrupalAPIManager].baseURL = [NSURL URLWithString:_serverName];
 }
 
 - (void)pullFromServer {
-    
+    [[DrupalAPIManager sharedDrupalAPIManager] getEntity:self];
 }
 
 - (void)pushToServer {
-    
+    [[DrupalAPIManager sharedDrupalAPIManager] postEntity:self];
 }
 
 - (void)patchDataServer {
