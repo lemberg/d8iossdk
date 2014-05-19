@@ -439,6 +439,7 @@
 					"$(OBJROOT)/UninstalledProducts/include",
 				);
 				INFOPLIST_FILE = "SampleApp/SampleApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/admin/DevCode/Drupal,
@@ -466,6 +467,7 @@
 					"$(OBJROOT)/UninstalledProducts/include",
 				);
 				INFOPLIST_FILE = "SampleApp/SampleApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/admin/DevCode/Drupal,

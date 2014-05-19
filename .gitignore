@@ -1,0 +1,10 @@
+# generic
+build/
+misc/
+private/
+
+# Finder
+.DS_Store
+
+# Xcode
+xcuserdata/
