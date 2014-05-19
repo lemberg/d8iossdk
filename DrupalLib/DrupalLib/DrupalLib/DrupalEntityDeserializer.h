@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+
+@class DrupalEntity;
+
 @interface DrupalEntityDeserializer : NSObject
+
++ (id)deserializeEntity:(DrupalEntity *)entity fromDictionary:(NSDictionary *)params;
++ (id)deserializeEntityClass:(Class)entityClass fromDictionary:(NSDictionary *)params;
 
 @end

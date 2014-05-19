@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import <DrupalLib/DrupalSDK.h>
+#import <DrupalLib/DrupalEntitySerializer.h>
+#import <DrupalLib/DrupalEntityDeserializer.h>
+#import <DrupalLib/DrupalEntity.h>
 
 @implementation AppDelegate
 
@@ -20,7 +24,13 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-        
+    
+    DrupalEntity *de = [DrupalEntity new];
+    de.oid = @"1";
+    de.path = @"fdasfadf";
+    NSDictionary *d = [DrupalEntitySerializer serializeEntity:de];
+    DrupalEntity *de1 = [DrupalEntityDeserializer deserializeEntity:de fromDictionary:d];
+    DrupalEntity *de2 = [DrupalEntityDeserializer deserializeEntityClass:[DrupalEntity class] fromDictionary:d];
     return YES;
 }
 

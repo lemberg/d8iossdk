@@ -21,6 +21,11 @@
 		9EAE4ECC192A382A00DEB1E5 /* DrupalEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAE4ECB192A382A00DEB1E5 /* DrupalEntity.m */; };
 		9EAE4ECF192A386D00DEB1E5 /* DrupalEntitySerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAE4ECE192A386D00DEB1E5 /* DrupalEntitySerializer.m */; };
 		9EAE4ED2192A387B00DEB1E5 /* DrupalEntityDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAE4ED1192A387B00DEB1E5 /* DrupalEntityDeserializer.m */; };
+		9EAE4ED6192A40ED00DEB1E5 /* DrupalEntity.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9EAE4ECA192A382A00DEB1E5 /* DrupalEntity.h */; };
+		9EAE4ED7192A40ED00DEB1E5 /* DrupalEntitySerializer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9EAE4ECD192A386D00DEB1E5 /* DrupalEntitySerializer.h */; };
+		9EAE4ED8192A40ED00DEB1E5 /* DrupalEntityDeserializer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9EAE4ED0192A387B00DEB1E5 /* DrupalEntityDeserializer.h */; };
+		9EAE4ED9192A414200DEB1E5 /* DrupalAPIManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9EAE4EC7192A381A00DEB1E5 /* DrupalAPIManager.h */; };
+		9EAE4EDD192A47D500DEB1E5 /* DrupalEntity+Properties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAE4EDC192A47D500DEB1E5 /* DrupalEntity+Properties.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,10 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				9EAE4ED9192A414200DEB1E5 /* DrupalAPIManager.h in CopyFiles */,
+				9EAE4ED6192A40ED00DEB1E5 /* DrupalEntity.h in CopyFiles */,
+				9EAE4ED7192A40ED00DEB1E5 /* DrupalEntitySerializer.h in CopyFiles */,
+				9EAE4ED8192A40ED00DEB1E5 /* DrupalEntityDeserializer.h in CopyFiles */,
 				842C6EFE1924DAE60070751B /* DrupalSDK.h in CopyFiles */,
 				842C6EDD1924DAAC0070751B /* DrupalLib.h in CopyFiles */,
 			);
@@ -68,6 +77,8 @@
 		9EAE4ECE192A386D00DEB1E5 /* DrupalEntitySerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrupalEntitySerializer.m; sourceTree = "<group>"; };
 		9EAE4ED0192A387B00DEB1E5 /* DrupalEntityDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrupalEntityDeserializer.h; sourceTree = "<group>"; };
 		9EAE4ED1192A387B00DEB1E5 /* DrupalEntityDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrupalEntityDeserializer.m; sourceTree = "<group>"; };
+		9EAE4EDB192A47D500DEB1E5 /* DrupalEntity+Properties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DrupalEntity+Properties.h"; sourceTree = "<group>"; };
+		9EAE4EDC192A47D500DEB1E5 /* DrupalEntity+Properties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DrupalEntity+Properties.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +147,8 @@
 				9EAE4ECE192A386D00DEB1E5 /* DrupalEntitySerializer.m */,
 				9EAE4ED0192A387B00DEB1E5 /* DrupalEntityDeserializer.h */,
 				9EAE4ED1192A387B00DEB1E5 /* DrupalEntityDeserializer.m */,
+				9EAE4EDB192A47D500DEB1E5 /* DrupalEntity+Properties.h */,
+				9EAE4EDC192A47D500DEB1E5 /* DrupalEntity+Properties.m */,
 				842C6EDA1924DAAC0070751B /* Supporting Files */,
 			);
 			path = DrupalLib;
@@ -253,6 +266,7 @@
 				9EAE4ECF192A386D00DEB1E5 /* DrupalEntitySerializer.m in Sources */,
 				9EAE4ED2192A387B00DEB1E5 /* DrupalEntityDeserializer.m in Sources */,
 				9EAE4ECC192A382A00DEB1E5 /* DrupalEntity.m in Sources */,
+				9EAE4EDD192A47D500DEB1E5 /* DrupalEntity+Properties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,7 +331,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -348,7 +362,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

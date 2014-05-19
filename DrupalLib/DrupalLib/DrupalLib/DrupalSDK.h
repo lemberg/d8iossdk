@@ -6,4 +6,7 @@
 //  Copyright (c) 2014 ls. All rights reserved.
 //
 
-//#import "DrupalEntity.h"
+#ifndef DrupalLib_DrupalSDK_h
+#define DrupalLib_DrupalSDK_h
+
+#endif
