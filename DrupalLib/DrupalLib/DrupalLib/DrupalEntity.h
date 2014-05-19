@@ -9,10 +9,14 @@
 #import <Foundation/Foundation.h>
 
 @interface DrupalEntity : NSObject
-//path to object on server (www.servername.com/path/oid)
+//path to object on server (http://www.servername.com/path/oid)
 @property (strong, nonatomic) NSString *path;
-//identificator to object on server (www.servername.com/path/oid)
+//identificator to object on server (http://www.servername.com/path/oid)
 @property (strong, nonatomic) NSString *oid;
+//server name (http://www.servername.com)
+@property (strong, nonatomic) NSString *serverName;
+
+- (id)initWithServerURL:(NSString *)serverURL;
 
 - (void)pullFromServer;
 - (void)pushToServer;
