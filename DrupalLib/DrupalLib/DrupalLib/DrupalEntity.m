@@ -67,6 +67,10 @@
 - (Class)classByPropertyName:(NSString *)propertyName {
     
     id value = [self valueForKey:propertyName];
+    if (!value) {
+        return nil;
+    }
+    
     return [value class];
 }
 /*
