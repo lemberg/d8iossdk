@@ -13,6 +13,8 @@
 #import <DrupalLib/DrupalEntity.h>
 #import <DrupalLib/DrupalAPIManager.h>
 
+#import <objc/runtime.h>
+
 #import "Info.h"
 
 @implementation AppDelegate
@@ -33,14 +35,64 @@
     Info *de = [[Info alloc] init];
     de.oid = @"2";
     de.path = @"node";
+    de.fields_blog_image = @[];
+    de.field_blog_image = [FieldBlogImage new];
+    de.field_blog_image.dataArray = @[@"2", @"1"];
     
-    [de pullFromServer];
+    FieldBlogImage *fieldBlog = [[FieldBlogImage alloc] init];
+    
+    //[de pullFromServerWithDelegate:nil];
+    [self checkProperties:fieldBlog];
     
     NSDictionary *d = [DrupalEntitySerializer serializeEntity:de];
-    DrupalEntity *de1 = [DrupalEntityDeserializer deserializeEntity:de fromDictionary:@{@"oid": @"2", @"path": @"123", @"serverName": @"3"}];
+    DrupalEntity *de1 = [DrupalEntityDeserializer deserializeEntity:de fromDictionary:@{@"oid": @"2",
+                                                                                        @"serverName": @"3",
+                                                                                        @"field_blog_image": @{@"oid": @(1), @"dataArray": @[]},
+                                                                                        @"fields_blog_image": @[@{@"oid": @(13)}, @{@"oid": @(19)}]
+                                                                                        }];
     DrupalEntity *de2 = [DrupalEntityDeserializer deserializeEntityClass:[DrupalEntity class] fromDictionary:d];
-    
     return YES;
+}
+
+- (void)checkProperties:(id)obj {
+    
+    unsigned int count;
+    objc_property_t* props = class_copyPropertyList([obj class], &count);
+    for (int i = 0; i < count; i++) {
+        objc_property_t property = props[i];
+        const char * name = property_getName(property);
+        NSString *propertyName = [NSString stringWithCString:name encoding:NSUTF8StringEncoding];
+        const char * type = property_getAttributes(property);
+        NSString *attr = [NSString stringWithCString:type encoding:NSUTF8StringEncoding];
+        
+        NSString * typeString = [NSString stringWithUTF8String:type];
+        NSArray * attributes = [typeString componentsSeparatedByString:@","];
+        NSString * typeAttribute = [attributes objectAtIndex:0];
+        NSString * propertyType = [typeAttribute substringFromIndex:1];
+        const char * rawPropertyType = [propertyType UTF8String];
+        
+        if (strcmp(rawPropertyType, @encode(float)) == 0) {
+            //it's a float
+        } else if (strcmp(rawPropertyType, @encode(int)) == 0) {
+            //it's an int
+        } else if (strcmp(rawPropertyType, @encode(id)) == 0) {
+            //it's some sort of object
+        } else {
+            // According to Apples Documentation you can determine the corresponding encoding values
+            NSLog(@"this is *id*");
+        }
+        
+        if ([typeAttribute hasPrefix:@"T@"]) {
+            NSString * typeClassName = [typeAttribute substringWithRange:NSMakeRange(3, [typeAttribute length]-4)];  //turns @"NSDate" into NSDate
+            Class typeClass = NSClassFromString(typeClassName);
+            if (typeClass != nil) {
+                // Here is the corresponding class even for nil values
+                NSLog(@"Type class name %@", typeClass);
+            }
+        }
+        
+    }
+    free(props);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

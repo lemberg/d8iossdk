@@ -16,12 +16,41 @@
 + (NSDictionary *)serializeEntity:(DrupalEntity *)entity {
     NSArray *properties = [entity allProperties];
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    
     for (NSString *prop in properties) {
         SEL propSelector = NSSelectorFromString(prop);
+        Class propClass = [entity classOfProperty:prop];
+        Class itemClass = [entity classByPropertyName:prop];
         id value = [entity performSelector:propSelector withObject:nil];
+        
+        if (value && [itemClass isSubclassOfClass:[DrupalEntity class]]) {
+            if ([value isKindOfClass:[NSArray class]]) {
+                NSMutableArray *array = [NSMutableArray array];
+                for (DrupalEntity* obj in value)
+                    [array addObject:[DrupalEntitySerializer serializeEntity:obj]];
+                value = array;
+            } else if ([value isKindOfClass:[NSSet class]]) {
+                NSMutableArray *array = [NSMutableArray array];
+                for (DrupalEntity* obj in [value allObjects])
+                    [array addObject:[DrupalEntitySerializer serializeEntity:obj]];
+                value = array;
+            } else if ([value isKindOfClass:[DrupalEntity class]]) {
+                value = [DrupalEntitySerializer serializeEntity:value];
+            }
+        } else if (!value) {
+            //  Default value by type
+            if ([propClass isSubclassOfClass:[NSArray class]] || [propClass isSubclassOfClass:[NSSet class]])
+                value = @[];
+            else if ([propClass isSubclassOfClass:[NSDictionary class]] || [propClass isSubclassOfClass:[DrupalEntity class]])
+                value = @{};
+            else                
+                value = @"";
+        }
+        
         if (value)
             [dict setObject:value forKey:prop];
     }
+    
     return [NSDictionary dictionaryWithDictionary:dict];
 }
 

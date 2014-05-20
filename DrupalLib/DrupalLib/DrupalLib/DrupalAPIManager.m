@@ -38,16 +38,16 @@ static DrupalAPIManager *sharedDrupalAPIManager;
 
 -(void) getEntity:(DrupalEntity*)entity{
 //    __block dispatch_block_t block = ^(){
-        NSError *blockError;
-        NSString* fullPath = [[self.baseURL absoluteString]stringByAppendingPathComponent: entity.path];
-    
-        [AFHTTPRequestOperationManager manager]GET:fullPath parameters:[DrupalEntitySerializer serializeEntity:entity]
-        success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            //
-        }
-        failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//            blockError = error;
-        };
+//        NSError *blockError;
+//        NSString* fullPath = [[self.baseURL absoluteString]stringByAppendingPathComponent: entity.path];
+//    
+//        [AFHTTPRequestOperationManager manager]GET:fullPath parameters:[DrupalEntitySerializer serializeEntity:entity]
+//        success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//            //
+//        }
+//        failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+////            blockError = error;
+//        };
 //        block();
 //    };
 }
@@ -67,41 +67,18 @@ static DrupalAPIManager *sharedDrupalAPIManager;
  }*/
 
 -(void) getEntityWithBlock:(void (^)(DrupalEntity *entity))handler{
-    NSString* fullPath = entity.path;
-    NSURL *url = [NSURL URLWithString:fullPath];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    //HTTP Request
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    operation.responseSerializer = [AFJSONResponseSerializer serializer];
-
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        //request succeeded
-        dispatch_async(dispatch_get_main_queue(), ^handler{
-            NSLog(@"JSON:%@",(NSString*)responseObject);
-        });
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        //request failed
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Data"
-                                                            message:[error localizedDescription]
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"Ok"
-                                                  otherButtonTitles:nil];
-        [alertView show];
-    }];
-
 //    NSString* fullPath = entity.path;
-//    NSDictionary* params = [NSDictionary dictionary];
-//    //create URL
 //    NSURL *url = [NSURL URLWithString:fullPath];
 //    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-//    //HTP Request
+//    //HTTP Request
 //    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
 //    operation.responseSerializer = [AFJSONResponseSerializer serializer];
 //
 //    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
 //        //request succeeded
-//        NSLog(@"JSON:%@",(NSString*)responseObject);
+//        dispatch_async(dispatch_get_main_queue(), ^handler{
+//            NSLog(@"JSON:%@",(NSString*)responseObject);
+//        });
 //        
 //    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 //        //request failed
@@ -112,8 +89,9 @@ static DrupalAPIManager *sharedDrupalAPIManager;
 //                                                  otherButtonTitles:nil];
 //        [alertView show];
 //    }];
-//    //
-    [operation start];
+
+//
+//    [operation start];
 }
 
 @end
