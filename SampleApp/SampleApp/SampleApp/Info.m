@@ -11,9 +11,7 @@
 @implementation Info
 
 - (Class)classByPropertyName:(NSString *)propertyName {
-    if ([propertyName isEqualToString:@"field_blog_image"])
-        return [FieldBlogImage class];
-    else if ([propertyName isEqualToString:@"fields_blog_image"])
+    if ([propertyName isEqualToString:@"fields_blog_image"])
         return [FieldBlogImage class];
     return nil;
 }

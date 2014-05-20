@@ -31,12 +31,12 @@
 
 
 - (Class)classOfProperty:(NSString *)propertyName {
+    // xcdoc://ios//library/prerelease/ios/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtPropertyIntrospection.html
     Class propertyClass = nil;
     objc_property_t property = class_getProperty([self class], [propertyName UTF8String]);
     NSString *propertyAttributes = [NSString stringWithCString:property_getAttributes(property) encoding:NSUTF8StringEncoding];
     NSArray *splitPropertyAttributes = [propertyAttributes componentsSeparatedByString:@","];
     if (splitPropertyAttributes.count > 0) {
-        // xcdoc://ios//library/prerelease/ios/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtPropertyIntrospection.html
         NSString *encodeType = splitPropertyAttributes[0];
         NSArray *splitEncodeType = [encodeType componentsSeparatedByString:@"\""];
         if (splitEncodeType.count > 1) {

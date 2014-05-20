@@ -17,31 +17,16 @@
 @implementation DrupalEntity
 @synthesize oid = _oid;
 @synthesize path = _path;
-@synthesize serverName = _serverName;
 
 - (id)init {
     
     if (self = [super init]) {
-
+        
     }
     
     return self;
 }
 
-- (id)initWithServerURL:(NSString *)serverURL {
-    
-    if (self = [super init]) {
-        _serverName = serverURL;
-        [DrupalAPIManager sharedDrupalAPIManager].baseURL = [NSURL URLWithString:serverURL];
-    }
-    
-    return self;
-}
-
-- (void)setServerName:(NSString *)serverName {
-    _serverName = serverName;
-    [DrupalAPIManager sharedDrupalAPIManager].baseURL = [NSURL URLWithString:_serverName];
-}
 
 - (void)pullFromServerWithDelegate:(id<DrupalEntityDelegate>)delegate {
     [[DrupalAPIManager sharedDrupalAPIManager] getEntity:self];
@@ -87,7 +72,7 @@
 */
  
 - (NSString *)description {
-    return [NSString stringWithFormat:@"%@ %@ %@", self.oid, self.serverName, self.path];
+    return [NSString stringWithFormat:@"%@ %@", self.oid, self.path];
 }
 
 @end
