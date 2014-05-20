@@ -41,7 +41,7 @@
     
     FieldBlogImage *fieldBlog = [[FieldBlogImage alloc] init];
     
-    //[de pullFromServerWithDelegate:nil];
+    [de pullFromServerWithDelegate:nil];
     [self checkProperties:fieldBlog];
     
     NSDictionary *d = [DrupalEntitySerializer serializeEntity:de];

@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		842C6ED81924DAAC0070751B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842C6ED71924DAAC0070751B /* Foundation.framework */; };
-		842C6EDD1924DAAC0070751B /* DrupalLib.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 842C6EDC1924DAAC0070751B /* DrupalLib.h */; };
-		842C6EDF1924DAAC0070751B /* DrupalLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C6EDE1924DAAC0070751B /* DrupalLib.m */; };
 		842C6EE61924DAAC0070751B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842C6EE51924DAAC0070751B /* XCTest.framework */; };
 		842C6EE71924DAAC0070751B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842C6ED71924DAAC0070751B /* Foundation.framework */; };
 		842C6EE91924DAAC0070751B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842C6EE81924DAAC0070751B /* UIKit.framework */; };
@@ -56,7 +54,6 @@
 				9EAE4ED7192A40ED00DEB1E5 /* DrupalEntitySerializer.h in CopyFiles */,
 				9EAE4ED8192A40ED00DEB1E5 /* DrupalEntityDeserializer.h in CopyFiles */,
 				842C6EFE1924DAE60070751B /* DrupalSDK.h in CopyFiles */,
-				842C6EDD1924DAAC0070751B /* DrupalLib.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,8 +63,6 @@
 		842C6ED41924DAAC0070751B /* libDrupalLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDrupalLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		842C6ED71924DAAC0070751B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		842C6EDB1924DAAC0070751B /* DrupalLib-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DrupalLib-Prefix.pch"; sourceTree = "<group>"; };
-		842C6EDC1924DAAC0070751B /* DrupalLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrupalLib.h; sourceTree = "<group>"; };
-		842C6EDE1924DAAC0070751B /* DrupalLib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrupalLib.m; sourceTree = "<group>"; };
 		842C6EE41924DAAC0070751B /* DrupalLibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrupalLibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		842C6EE51924DAAC0070751B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		842C6EE81924DAAC0070751B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -149,8 +144,6 @@
 			isa = PBXGroup;
 			children = (
 				842C6EFD1924DAD70070751B /* DrupalSDK.h */,
-				842C6EDC1924DAAC0070751B /* DrupalLib.h */,
-				842C6EDE1924DAAC0070751B /* DrupalLib.m */,
 				9EAE4EC7192A381A00DEB1E5 /* DrupalAPIManager.h */,
 				9EAE4EC8192A381A00DEB1E5 /* DrupalAPIManager.m */,
 				9EAE4ECA192A382A00DEB1E5 /* DrupalEntity.h */,
@@ -278,7 +271,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EAE4EC9192A381A00DEB1E5 /* DrupalAPIManager.m in Sources */,
-				842C6EDF1924DAAC0070751B /* DrupalLib.m in Sources */,
 				9EAE4ECF192A386D00DEB1E5 /* DrupalEntitySerializer.m in Sources */,
 				A8AC673D192B5A1400AE8CD8 /* DrupalDictionary.m in Sources */,
 				9EAE4ED2192A387B00DEB1E5 /* DrupalEntityDeserializer.m in Sources */,

@@ -9,70 +9,42 @@
 #import "DrupalEntity.h"
 #import "DrupalAPIManager.h"
 
-@interface DrupalEntity () {
-    DrupalAPIManager* _drupalApiManager;
-}
-@end
 
 @implementation DrupalEntity
-@synthesize oid = _oid;
-@synthesize path = _path;
-
-- (id)init {
-    
-    if (self = [super init]) {
-        
-    }
-    
-    return self;
-}
-
 
 - (void)pullFromServerWithDelegate:(id<DrupalEntityDelegate>)delegate {
     [[DrupalAPIManager sharedDrupalAPIManager] getEntity:self];
 }
 
+
 - (void)pushToServerWithDelegate:(id<DrupalEntityDelegate>)delegate {
     [[DrupalAPIManager sharedDrupalAPIManager] postEntity:self];
 }
+
 
 - (void)patchDataServerWithDelegate:(id<DrupalEntityDelegate>)delegate {
     
 }
 
+
 - (void)deleteFromServerWithDelegate:(id<DrupalEntityDelegate>)delegate {
     
 }
 
-- (Class)className {
-    
-    return [self class];
-}
 
 - (Class)classByPropertyName:(NSString *)propertyName {
-    
-    id value = [self valueForKey:propertyName];
-    if (!value) {
-        return nil;
-    }
-    
-    return [value class];
+    return nil;
 }
-/*
-- (NSDictionary *)buildDictionary {
-    
-    NSString *oid = _oid ?: @"";
-    NSString *path = _path ?: @"";
-    
-    NSDictionary *dict = @{@"oid" : oid,
-                           @"path" : path};
-    
-    return dict;
+
+
+- (NSDictionary *)requestGETParams {
+    return nil;
 }
-*/
- 
+
+
 - (NSString *)description {
     return [NSString stringWithFormat:@"%@ %@", self.oid, self.path];
 }
+
 
 @end
