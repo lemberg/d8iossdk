@@ -35,6 +35,9 @@
     Info *de = [[Info alloc] init];
     de.oid = @"2";
     de.path = @"node";
+    de.fields_blog_image = @[];
+    de.field_blog_image = [FieldBlogImage new];
+    de.field_blog_image.dataArray = @[@"2", @"1"];
     
     FieldBlogImage *fieldBlog = [[FieldBlogImage alloc] init];
     
@@ -42,12 +45,12 @@
     [self checkProperties:fieldBlog];
     
     NSDictionary *d = [DrupalEntitySerializer serializeEntity:de];
-    DrupalEntity *de1 = [DrupalEntityDeserializer deserializeEntity:de fromDictionary:@{@"oid": @"2",
-                                                                                        @"path": @"123",
-                                                                                        @"serverName": @"3"}];
-    
-    DrupalEntity *de2 = [DrupalEntityDeserializer deserializeEntityClass:[DrupalEntity class] fromDictionary:d];
-    
+//    DrupalEntity *de1 = [DrupalEntityDeserializer deserializeEntity:de fromDictionary:@{@"oid": @"2",
+//                                                                                        @"path": @"123",
+//                                                                                        @"serverName": @"3"}];
+//    
+//    DrupalEntity *de2 = [DrupalEntityDeserializer deserializeEntityClass:[DrupalEntity class] fromDictionary:d];
+//    
     return YES;
 }
 

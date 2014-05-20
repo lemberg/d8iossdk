@@ -12,5 +12,6 @@
 @interface DrupalEntity (Properties)
 
 - (NSArray *)allProperties;
+- (Class)classOfProperty:(NSString *)propertyName;
 
 @end
