@@ -32,6 +32,8 @@
 - (void)patchDataServerWithDelegate:(id <DrupalEntityDelegate>) delegate;
 - (void)deleteFromServerWithDelegate:(id <DrupalEntityDelegate>) delegate;
 
+- (Class)className;
+
 //return object in dictionary
 - (NSDictionary *)buildDictionary;
 

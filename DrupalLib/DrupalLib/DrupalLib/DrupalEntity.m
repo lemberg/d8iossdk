@@ -59,6 +59,11 @@
     
 }
 
+- (Class)className {
+    
+    return [self class];
+}
+
 - (NSDictionary *)buildDictionary {
     
     NSString *oid = _oid ?: @"";
