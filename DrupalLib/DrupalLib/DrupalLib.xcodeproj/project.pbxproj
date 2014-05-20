@@ -85,6 +85,7 @@
 		9EAE4ED1192A387B00DEB1E5 /* DrupalEntityDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrupalEntityDeserializer.m; sourceTree = "<group>"; };
 		9EAE4EDB192A47D500DEB1E5 /* DrupalEntity+Properties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DrupalEntity+Properties.h"; sourceTree = "<group>"; };
 		9EAE4EDC192A47D500DEB1E5 /* DrupalEntity+Properties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DrupalEntity+Properties.m"; sourceTree = "<group>"; };
+		9EB2B01D192B8B8800F06C99 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		A8AC6738192B571800AE8CD8 /* DrupalSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrupalSet.h; sourceTree = "<group>"; };
 		A8AC6739192B571800AE8CD8 /* DrupalSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrupalSet.m; sourceTree = "<group>"; };
 		A8AC673B192B5A1400AE8CD8 /* DrupalDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrupalDictionary.h; sourceTree = "<group>"; };
@@ -117,6 +118,7 @@
 		842C6ECB1924DAAC0070751B = {
 			isa = PBXGroup;
 			children = (
+				9EB2B01D192B8B8800F06C99 /* README.md */,
 				842C6ED91924DAAC0070751B /* DrupalLib */,
 				842C6EED1924DAAC0070751B /* DrupalLibTests */,
 				842C6ED61924DAAC0070751B /* Frameworks */,
