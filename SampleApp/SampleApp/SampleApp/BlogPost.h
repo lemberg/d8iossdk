@@ -16,5 +16,18 @@
 @property (nonatomic) NSString *nid;
 @property (nonatomic) NSString *field_blog_author;
 @property (nonatomic) NSString *field_blog_date;
+@property (nonatomic) NSString *uiid;
+@property (nonatomic) NSString *vid;
+@property (nonatomic) NSString *type;
+@property (nonatomic) NSString *langcode;
+@property (nonatomic) NSString *uid;
+@property (nonatomic) NSString *status;
+@property (nonatomic) NSString *created;
+@property (nonatomic) NSString *changed;
+@property (nonatomic) NSString *promote;
+@property (nonatomic) NSString *sticky;
+@property (nonatomic) NSString *revision_timestemp;
+@property (nonatomic) NSString *log;
+@property (nonatomic) NSString *field_blog_cathegory;
 
 @end

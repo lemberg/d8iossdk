@@ -49,7 +49,7 @@ static DrupalAPIManager *sharedDrupalAPIManager;
 
 -(void) getEntity:(DrupalEntity*)entity{
     NSString* fullPath = [self getFullPathForEntity:entity];
-
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [[manager requestSerializer] setValue:@"application/json" forHTTPHeaderField:@"Accept"];
 
@@ -65,7 +65,7 @@ static DrupalAPIManager *sharedDrupalAPIManager;
 
 -(NSString*)getFullPathForEntity:(DrupalEntity*)entity{
     NSString* fullPath = [[self.baseURL absoluteString]stringByAppendingPathComponent: entity.path];
-    fullPath = [fullPath stringByAppendingString:@"/2"];
+//    fullPath = [fullPath stringByAppendingString:@"/2"];
 //    NSLog(@"full path:%@",fullPath);
     return fullPath;
 }
