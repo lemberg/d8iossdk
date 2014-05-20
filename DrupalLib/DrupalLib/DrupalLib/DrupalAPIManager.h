@@ -18,4 +18,6 @@
 -(void) postEntity:(DrupalEntity*)entity;
 -(void) getEntity:(DrupalEntity*)entity;
 
+-(NSString*)getFullPathForEntity:(DrupalEntity*)entity;
+
 @end
