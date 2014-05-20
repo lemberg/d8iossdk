@@ -19,7 +19,9 @@
 @property (strong, nonatomic) id width;
 @property (strong, nonatomic) id height;
 
-@property (strong, nonatomic) DrupalSet *drupalSet;
-@property (strong, nonatomic) DrupalDictionary *drupalDictionary;
+//@property (strong, nonatomic) DrupalSet *drupalSet;
+//@property (strong, nonatomic) DrupalDictionary *drupalDictionary;
+
+@property (strong, nonatomic) NSArray *dataArray;
 
 @end

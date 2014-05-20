@@ -69,7 +69,7 @@
     id value = [self valueForKey:propertyName];
     return [value class];
 }
-
+/*
 - (NSDictionary *)buildDictionary {
     
     NSString *oid = _oid ?: @"";
@@ -80,7 +80,8 @@
     
     return dict;
 }
-
+*/
+ 
 - (NSString *)description {
     return [NSString stringWithFormat:@"%@ %@ %@", self.oid, self.serverName, self.path];
 }

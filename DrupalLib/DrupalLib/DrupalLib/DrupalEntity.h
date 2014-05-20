@@ -36,6 +36,6 @@
 - (Class)classByPropertyName:(NSString *)propertyName;
 
 //return object in dictionary
-- (NSDictionary *)buildDictionary;
+//- (NSDictionary *)buildDictionary;
 
 @end
