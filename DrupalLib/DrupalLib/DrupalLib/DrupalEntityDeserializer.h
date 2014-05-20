@@ -13,7 +13,9 @@
 
 @interface DrupalEntityDeserializer : NSObject
 
-+ (id)deserializeEntity:(DrupalEntity *)entity fromData:(id)params;
-+ (id)deserializeEntityClass:(Class)entityClass fromData:(id)params;
++ (id)deserializeEntity:(DrupalEntity *)entity fromData:(NSDictionary *)data;
++ (id)deserializeEntities:(DrupalEntity *)entity fromData:(NSArray *)data;
++ (id)deserializeEntityClass:(Class)entityClass fromData:(NSDictionary *)data;
++ (id)deserializeEntitiesClass:(Class)entityClass fromData:(NSArray *)data;
 
 @end

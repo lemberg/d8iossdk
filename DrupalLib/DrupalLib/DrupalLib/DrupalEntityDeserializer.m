@@ -13,28 +13,9 @@
 
 @implementation DrupalEntityDeserializer
 
-+ (id)deserializeEntity:(DrupalEntity *)entity fromData:(id)params
-{
-    if ([params isKindOfClass:[NSDictionary class]]) {
-        return [DrupalEntityDeserializer deserializeEntity:entity withDictionary:params];
-    } else if ([params isKindOfClass:[NSArray class]]) {
-        NSMutableArray *array = [NSMutableArray array];
-        for (NSDictionary *d in params)
-            [array addObject:[DrupalEntityDeserializer deserializeEntity:[[entity class] new] withDictionary:d]];
-        return array;
-    }
-    return nil;
-}
-
-
-+ (id)deserializeEntityClass:(Class)entityClass fromData:(id)params {
-    return [DrupalEntityDeserializer deserializeEntity:[entityClass new] fromData:params];
-}
-
-
-+ (id)deserializeEntity:(DrupalEntity *)entity withDictionary:(NSDictionary *)params {
++ (id)deserializeEntity:(DrupalEntity *)entity fromData:(NSDictionary *)data {
     NSArray *properties = [entity allProperties];
-    for (NSString *prop in params.allKeys) {
+    for (NSString *prop in data.allKeys) {
         if ([properties indexOfObject:prop] == NSNotFound)
             continue;
         
@@ -45,7 +26,7 @@
         
         Class propClass = [entity classOfProperty:prop];
         Class itemClass = [entity classByPropertyName:prop];
-        id value = [params objectForKey:prop];
+        id value = [data objectForKey:prop];
         if ([value isKindOfClass:[NSDictionary class]] && [propClass isSubclassOfClass:[DrupalEntity class]]) {
             value = [DrupalEntityDeserializer deserializeEntityClass:propClass fromData:value];
         } else if ([value isKindOfClass:[NSArray class]] && [itemClass isSubclassOfClass:[DrupalEntity class]]) {
@@ -59,5 +40,25 @@
     return entity;
 }
 
+
++ (id)deserializeEntities:(DrupalEntity *)entity fromData:(NSArray *)data {
+    NSMutableArray *array = [NSMutableArray array];
+    for (NSDictionary *d in data)
+        [array addObject:[DrupalEntityDeserializer deserializeEntity:entity fromData:d]];
+    return array;
+}
+
+
++ (id)deserializeEntityClass:(Class)entityClass fromData:(NSDictionary *)data {
+    return [DrupalEntityDeserializer deserializeEntity:[entityClass new] fromData:data];
+}
+
+
++ (id)deserializeEntitiesClass:(Class)entityClass fromData:(NSArray *)data {
+    NSMutableArray *array = [NSMutableArray array];
+    for (NSDictionary *d in data)
+        [array addObject:[DrupalEntityDeserializer deserializeEntity:[entityClass new] fromData:d]];
+    return array;
+}
 
 @end
