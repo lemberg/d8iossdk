@@ -28,16 +28,13 @@
         Class propClass = [entity classOfProperty:prop];
         Class itemClass = [entity classByPropertyName:prop];
         id value = [params objectForKey:prop];
-        if ([value isKindOfClass:[NSDictionary class]]) {
-            if ([propClass isSubclassOfClass:[DrupalEntity class]])
-                value = [DrupalEntityDeserializer deserializeEntityClass:propClass fromDictionary:value];
-        } else if ([value isKindOfClass:[NSArray class]]) {
-            if ([itemClass isSubclassOfClass:[DrupalEntity class]]) {
-                NSMutableArray *obj = [NSMutableArray array];
-                for (NSDictionary *d in value)
-                    [obj addObject:[DrupalEntityDeserializer deserializeEntityClass:itemClass fromDictionary:d]];
-                value = obj;
-            }
+        if ([value isKindOfClass:[NSDictionary class]] && [propClass isSubclassOfClass:[DrupalEntity class]]) {
+            value = [DrupalEntityDeserializer deserializeEntityClass:propClass fromDictionary:value];
+        } else if ([value isKindOfClass:[NSArray class]] && [itemClass isSubclassOfClass:[DrupalEntity class]]) {
+            NSMutableArray *obj = [NSMutableArray array];
+            for (NSDictionary *d in value)
+                [obj addObject:[DrupalEntityDeserializer deserializeEntityClass:itemClass fromDictionary:d]];
+            value = obj;
         }
         [entity performSelector:setterSelector withObject:value];
     }
@@ -48,5 +45,6 @@
 + (id)deserializeEntityClass:(Class)entityClass fromDictionary:(NSDictionary *)params {
     return [DrupalEntityDeserializer deserializeEntity:[entityClass new] fromDictionary:params];
 }
+
 
 @end
