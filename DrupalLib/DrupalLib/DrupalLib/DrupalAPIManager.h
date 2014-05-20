@@ -16,8 +16,6 @@
 +(DrupalAPIManager*) sharedDrupalAPIManager;
 
 -(void) postEntity:(DrupalEntity*)entity;
--(void) postEntityWithBlock:(void(^)(DrupalEntity *))handler;
 -(void) getEntity:(DrupalEntity*)entity;
--(void) getEntityWithBlock:(void(^)(DrupalEntity *))handler;
 
 @end
