@@ -49,7 +49,7 @@ static DrupalAPIManager *sharedDrupalAPIManager;
 
     [manager GET:fullPath parameters:[entity requestGETParams]
     success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [DrupalEntityDeserializer deserializeEntity:entity fromDictionary: (NSDictionary *)responseObject];
+        [DrupalEntityDeserializer deserializeEntity:entity fromData: (NSDictionary *)responseObject];
         NSLog(@"%@",[entity description]);
     }
     failure:^(AFHTTPRequestOperation *operation, NSError *error) {

@@ -16,6 +16,7 @@
 #import <objc/runtime.h>
 
 #import "Info.h"
+#import "BlogPage.h"
 
 @implementation AppDelegate
 
@@ -42,15 +43,19 @@
     FieldBlogImage *fieldBlog = [[FieldBlogImage alloc] init];
     
     [de pullFromServerWithDelegate:nil];
-    [self checkProperties:fieldBlog];
+//    [self checkProperties:fieldBlog];
+//    
+//    NSDictionary *d = [DrupalEntitySerializer serializeEntity:de];
+//    DrupalEntity *de1 = [DrupalEntityDeserializer deserializeEntity:de fromDictionary:@{@"oid": @"2",
+//                                                                                        @"serverName": @"3",
+//                                                                                        @"field_blog_image": @{@"oid": @(1), @"dataArray": @[]},
+//                                                                                        @"fields_blog_image": @[@{@"oid": @(13)}, @{@"oid": @(19)}]
+//                                                                                        }];
+//    DrupalEntity *de2 = [DrupalEntityDeserializer deserializeEntityClass:[DrupalEntity class] fromDictionary:d];
+    BlogPage *page = [BlogPage new];
+    page.page = @(1);
+    [page pullFromServerWithDelegate:nil];
     
-    NSDictionary *d = [DrupalEntitySerializer serializeEntity:de];
-    DrupalEntity *de1 = [DrupalEntityDeserializer deserializeEntity:de fromDictionary:@{@"oid": @"2",
-                                                                                        @"serverName": @"3",
-                                                                                        @"field_blog_image": @{@"oid": @(1), @"dataArray": @[]},
-                                                                                        @"fields_blog_image": @[@{@"oid": @(13)}, @{@"oid": @(19)}]
-                                                                                        }];
-    DrupalEntity *de2 = [DrupalEntityDeserializer deserializeEntityClass:[DrupalEntity class] fromDictionary:d];
     return YES;
 }
 
