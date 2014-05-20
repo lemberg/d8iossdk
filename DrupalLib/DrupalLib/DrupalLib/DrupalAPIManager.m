@@ -47,25 +47,28 @@ static DrupalAPIManager *sharedDrupalAPIManager;
              NSLog(@"getEntity error:%@",error.description);
          }];}
 
--(void) getEntity:(DrupalEntity*)entity{
+-(void) getEntity:(DrupalEntity*)entity completeHandler:(CompleteHandler)block{
     NSString* fullPath = [self getFullPathForEntity:entity];
-    
+
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [[manager requestSerializer] setValue:@"application/json" forHTTPHeaderField:@"Accept"];
 
     [manager GET:fullPath parameters:[entity requestGETParams]
     success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [DrupalEntityDeserializer deserializeEntity:entity fromData: (NSDictionary *)responseObject];
+        block(entity, nil);
         NSLog(@"%@",[entity description]);
     }
     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"getEntity error:%@",error.description);
+        block(nil, error);
     }];
+
 }
 
 -(NSString*)getFullPathForEntity:(DrupalEntity*)entity{
     NSString* fullPath = [[self.baseURL absoluteString]stringByAppendingPathComponent: entity.path];
-//    fullPath = [fullPath stringByAppendingString:@"/2"];
+    fullPath = [fullPath stringByAppendingString:@"/2"];
 //    NSLog(@"full path:%@",fullPath);
     return fullPath;
 }
