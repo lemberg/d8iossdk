@@ -33,6 +33,7 @@
 - (void)deleteFromServerWithDelegate:(id <DrupalEntityDelegate>) delegate;
 
 - (Class)className;
+- (Class)classByPropertyName:(NSString *)propertyName;
 
 //return object in dictionary
 - (NSDictionary *)buildDictionary;

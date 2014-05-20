@@ -64,6 +64,12 @@
     return [self class];
 }
 
+- (Class)classByPropertyName:(NSString *)propertyName {
+    
+    id value = [self valueForKey:propertyName];
+    return [value class];
+}
+
 - (NSDictionary *)buildDictionary {
     
     NSString *oid = _oid ?: @"";

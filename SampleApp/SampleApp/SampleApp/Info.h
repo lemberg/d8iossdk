@@ -7,6 +7,7 @@
 //
 
 #import <DrupalLib/DrupalEntity.h>
+#import "FieldBlogImage.h"
 
 @interface Info : DrupalEntity
 
@@ -28,6 +29,6 @@
 @property (strong, nonatomic) id field_blog_author;
 @property (strong, nonatomic) id field_blog_cathegory;
 @property (strong, nonatomic) id field_blog_date;
-@property (strong, nonatomic) id field_blog_image;
+@property (strong, nonatomic) FieldBlogImage *field_blog_image;
 
 @end
