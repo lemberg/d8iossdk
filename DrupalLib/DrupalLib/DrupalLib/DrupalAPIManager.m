@@ -56,12 +56,14 @@ static DrupalAPIManager *sharedDrupalAPIManager;
     [manager GET:fullPath parameters:[entity requestGETParams]
     success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [DrupalEntityDeserializer deserializeEntity:entity fromData: (NSDictionary *)responseObject];
-        block(entity, nil);
+        if (block)
+            block(entity, nil);
         NSLog(@"%@",[entity description]);
     }
     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"getEntity error:%@",error.description);
-        block(nil, error);
+        if (block)
+            block(nil, error);
     }];
 
 }

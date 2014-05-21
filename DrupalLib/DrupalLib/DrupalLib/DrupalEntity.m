@@ -13,7 +13,7 @@
 @implementation DrupalEntity
 
 - (void)pullFromServerWithDelegate:(id<DrupalEntityDelegate>)delegate {
-    [[DrupalAPIManager sharedDrupalAPIManager] getEntity:self];
+    [[DrupalAPIManager sharedDrupalAPIManager] getEntity:self completeHandler:nil];
 }
 
 
