@@ -9,6 +9,8 @@
 #import <DrupalLib/DrupalEntity.h>
 
 
+@class FieldBlogImage;
+
 @interface BlogPost : DrupalEntity
 
 @property (nonatomic) NSString *title;
@@ -29,5 +31,6 @@
 @property (nonatomic) NSString *revision_timestemp;
 @property (nonatomic) NSString *log;
 @property (nonatomic) NSString *field_blog_cathegory;
+@property (nonatomic) FieldBlogImage *field_blog_image;
 
 @end

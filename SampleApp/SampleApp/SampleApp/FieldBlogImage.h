@@ -11,17 +11,12 @@
 #import <DrupalLib/DrupalDictionary.h>
 
 @interface FieldBlogImage : DrupalEntity
-@property (strong, nonatomic) id target_id;
-@property (strong, nonatomic) id display;
-@property (strong, nonatomic) id description;
-@property (strong, nonatomic) id alt;
-@property (strong, nonatomic) id title;
-@property (strong, nonatomic) id width;
-@property (strong, nonatomic) id height;
 
-//@property (strong, nonatomic) DrupalSet *drupalSet;
-//@property (strong, nonatomic) DrupalDictionary *drupalDictionary;
-
-@property (strong, nonatomic) NSArray *dataArray;
+@property (strong, nonatomic) NSString *target_id;
+@property (strong, nonatomic) NSString *display;
+@property (strong, nonatomic) NSString *alt;
+@property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic) NSString *width;
+@property (strong, nonatomic) NSString *height;
 
 @end

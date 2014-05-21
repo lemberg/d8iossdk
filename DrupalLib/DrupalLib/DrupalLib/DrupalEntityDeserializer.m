@@ -30,11 +30,13 @@
         if ([value isKindOfClass:[NSDictionary class]] && [propClass isSubclassOfClass:[DrupalEntity class]]) {
             value = [DrupalEntityDeserializer deserializeEntityClass:propClass fromData:value];
         } else if ([value isKindOfClass:[NSArray class]]) {
-            if ([itemClass isSubclassOfClass:[DrupalEntity class]]) {
+            if ([itemClass isSubclassOfClass:[DrupalEntity class]] && [propClass isSubclassOfClass:[NSArray class]]) {
                 NSMutableArray *obj = [NSMutableArray array];
                 for (NSDictionary *d in value)
                     [obj addObject:[DrupalEntityDeserializer deserializeEntityClass:itemClass fromData:d]];
                 value = obj;
+            } else if ([itemClass isSubclassOfClass:[DrupalEntity class]] && [propClass isSubclassOfClass:[DrupalEntity class]]) {
+                value = [DrupalEntityDeserializer deserializeEntityClass:itemClass fromData:[value firstObject]];
             } else if (![propClass isSubclassOfClass:[NSArray class]]) {
                 value = [value firstObject];
                 if ([value isKindOfClass:[NSDictionary class]]) {

@@ -17,7 +17,7 @@ typedef void (^CompleteHandler)(id response, NSError *error);
 
 @property NSURL *baseURL;
 
-+ (DrupalAPIManager*) haredDrupalAPIManager;
++ (DrupalAPIManager*) sharedDrupalAPIManager;
 
 - (void)postEntity:(DrupalEntity*)entity;
 - (void)getEntity:(DrupalEntity*)entity completeHandler:(CompleteHandler)block;
