@@ -11,20 +11,21 @@
 #import "DrupalEntityDeserializer.h"
 #import "DrupalEntitySerializer.h"
 
+
 static DrupalAPIManager *sharedDrupalAPIManager;
+
 
 @implementation DrupalAPIManager
 
-@synthesize baseURL;
-
--(id)init{
+- (id)init{
     self = [super init];
     if (self) {
     }
     return self;
 }
 
-+(DrupalAPIManager*) sharedDrupalAPIManager{
+
++ (DrupalAPIManager*)sharedDrupalAPIManager{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedDrupalAPIManager = [[DrupalAPIManager alloc] init];
@@ -32,46 +33,50 @@ static DrupalAPIManager *sharedDrupalAPIManager;
     return sharedDrupalAPIManager;
 }
 
--(void) postEntity:(DrupalEntity*)entity{
+
+- (void)postEntity:(DrupalEntity*)entity{
     NSString* fullPath = [self getFullPathForEntity:entity];
-    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [[manager requestSerializer] setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    
-    [manager POST:fullPath parameters:[DrupalEntitySerializer serializeEntity:entity]
+    [manager POST:fullPath
+       parameters:[DrupalEntitySerializer serializeEntity:entity]
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              NSLog(@"%@",[DrupalEntitySerializer serializeEntity: entity]);
+          }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              NSLog(@"getEntity error:%@",error.description);
+          }];
+}
+
+
+- (void)getEntity:(DrupalEntity*)entity completeHandler:(CompleteHandler)block{
+    NSString* fullPath = [self getFullPathForEntity:entity];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [[manager requestSerializer] setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [manager GET:fullPath
+      parameters:[entity requestGETParams]
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             
-             NSLog(@"%@",[DrupalEntitySerializer serializeEntity: entity]);
+             id result;
+             if ([responseObject isKindOfClass:[NSArray class]])
+                 result = [DrupalEntityDeserializer deserializeEntities:entity fromData:responseObject];
+             else if ([responseObject isKindOfClass:[NSDictionary class]])
+                 result = [DrupalEntityDeserializer deserializeEntity:entity fromData: (NSDictionary *)responseObject];
+             if (block)
+                 block(result, nil);
+             NSLog(@"%@", result);
          }
          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
              NSLog(@"getEntity error:%@",error.description);
-         }];}
-
--(void) getEntity:(DrupalEntity*)entity completeHandler:(CompleteHandler)block{
-    NSString* fullPath = [self getFullPathForEntity:entity];
-
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [[manager requestSerializer] setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-
-    [manager GET:fullPath parameters:[entity requestGETParams]
-    success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [DrupalEntityDeserializer deserializeEntity:entity fromData: (NSDictionary *)responseObject];
-        if (block)
-            block(entity, nil);
-        NSLog(@"%@",[entity description]);
-    }
-    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"getEntity error:%@",error.description);
-        if (block)
-            block(nil, error);
-    }];
-
+             if (block)
+                 block(nil, error);
+         }];
 }
 
--(NSString*)getFullPathForEntity:(DrupalEntity*)entity{
+
+- (NSString*)getFullPathForEntity:(DrupalEntity*)entity{
     NSString* fullPath = [[self.baseURL absoluteString]stringByAppendingPathComponent: entity.path];
-    fullPath = [fullPath stringByAppendingString:@"/2"];
-//    NSLog(@"full path:%@",fullPath);
     return fullPath;
 }
+
+
 @end

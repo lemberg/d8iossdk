@@ -9,18 +9,19 @@
 #import <Foundation/Foundation.h>
 #import "DrupalEntity.h"
 
-typedef void (^CompleteHandler)(DrupalEntity *drupalEntity, NSError *error);
+
+typedef void (^CompleteHandler)(id response, NSError *error);
+
 
 @interface DrupalAPIManager : NSObject
 
 @property NSURL *baseURL;
 
-+(DrupalAPIManager*) sharedDrupalAPIManager;
++ (DrupalAPIManager*) haredDrupalAPIManager;
 
--(void) postEntity:(DrupalEntity*)entity;
--(void) getEntity:(DrupalEntity*)entity completeHandler:(CompleteHandler)block;
+- (void)postEntity:(DrupalEntity*)entity;
+- (void)getEntity:(DrupalEntity*)entity completeHandler:(CompleteHandler)block;
 
--(NSString*)getFullPathForEntity:(DrupalEntity*)entity;
-
+- (NSString*)getFullPathForEntity:(DrupalEntity*)entity;
 
 @end

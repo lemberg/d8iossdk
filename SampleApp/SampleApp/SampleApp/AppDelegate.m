@@ -33,9 +33,9 @@
     
     [DrupalAPIManager sharedDrupalAPIManager].baseURL = [NSURL URLWithString:@"http://vh015.uk.dev-ls.co.uk"];
     
-//    BlogPage *page = [BlogPage new];
-//    page.page = @(1);
-//    [page pullFromServerWithDelegate:nil];
+    BlogPage *page = [BlogPage new];
+    page.page = @(1);
+    [page pullFromServerWithDelegate:nil];
     
     BlogPost *post = [BlogPost new];
     post.nid = @"3";
