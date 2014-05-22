@@ -14,7 +14,6 @@
 		842C6F181924DB8C0070751B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 842C6F161924DB8C0070751B /* InfoPlist.strings */; };
 		842C6F1A1924DB8C0070751B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C6F191924DB8C0070751B /* main.m */; };
 		842C6F1E1924DB8C0070751B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C6F1D1924DB8C0070751B /* AppDelegate.m */; };
-		842C6F211924DB8D0070751B /* SampleApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 842C6F1F1924DB8D0070751B /* SampleApp.xcdatamodeld */; };
 		842C6F231924DB8D0070751B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 842C6F221924DB8D0070751B /* Images.xcassets */; };
 		842C6F2A1924DB8D0070751B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842C6F291924DB8D0070751B /* XCTest.framework */; };
 		842C6F2B1924DB8D0070751B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842C6F0B1924DB8C0070751B /* Foundation.framework */; };
@@ -23,6 +22,9 @@
 		842C6F351924DB8D0070751B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 842C6F331924DB8D0070751B /* InfoPlist.strings */; };
 		842C6F371924DB8D0070751B /* SampleAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C6F361924DB8D0070751B /* SampleAppTests.m */; };
 		84FF7D03192635A50003D710 /* libDrupalLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FF7CFA192631330003D710 /* libDrupalLib.a */; };
+		9EAE6BEA192E2B50001BECFF /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EAE6BE9192E2B50001BECFF /* main.storyboard */; };
+		9EAE6BEE192E2DC6001BECFF /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAE6BED192E2DC6001BECFF /* MainController.m */; };
+		9EAE6BF1192E2F2A001BECFF /* PostController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAE6BF0192E2F2A001BECFF /* PostController.m */; };
 		9EB2B020192B909E00F06C99 /* BlogPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB2B01F192B909E00F06C99 /* BlogPost.m */; };
 		9EB2B024192B912100F06C99 /* BlogPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB2B023192B912100F06C99 /* BlogPage.m */; };
 		A8AC6737192A54C000AE8CD8 /* FieldBlogImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AC6736192A54C000AE8CD8 /* FieldBlogImage.m */; };
@@ -71,7 +73,6 @@
 		842C6F1B1924DB8C0070751B /* SampleApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SampleApp-Prefix.pch"; sourceTree = "<group>"; };
 		842C6F1C1924DB8C0070751B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		842C6F1D1924DB8C0070751B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		842C6F201924DB8D0070751B /* SampleApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SampleApp.xcdatamodel; sourceTree = "<group>"; };
 		842C6F221924DB8D0070751B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		842C6F281924DB8D0070751B /* SampleAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		842C6F291924DB8D0070751B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -79,6 +80,11 @@
 		842C6F341924DB8D0070751B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		842C6F361924DB8D0070751B /* SampleAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleAppTests.m; sourceTree = "<group>"; };
 		84FF7CF4192631330003D710 /* DrupalLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DrupalLib.xcodeproj; path = ../../DrupalLib/DrupalLib/DrupalLib.xcodeproj; sourceTree = "<group>"; };
+		9EAE6BE9192E2B50001BECFF /* main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = main.storyboard; sourceTree = "<group>"; };
+		9EAE6BEC192E2DC6001BECFF /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
+		9EAE6BED192E2DC6001BECFF /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
+		9EAE6BEF192E2F2A001BECFF /* PostController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostController.h; sourceTree = "<group>"; };
+		9EAE6BF0192E2F2A001BECFF /* PostController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostController.m; sourceTree = "<group>"; };
 		9EB2B01E192B909E00F06C99 /* BlogPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogPost.h; sourceTree = "<group>"; };
 		9EB2B01F192B909E00F06C99 /* BlogPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogPost.m; sourceTree = "<group>"; };
 		9EB2B022192B912100F06C99 /* BlogPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogPage.h; sourceTree = "<group>"; };
@@ -152,6 +158,11 @@
 				A8AC6730192A4E6600AE8CD8 /* DataBase */,
 				842C6F1C1924DB8C0070751B /* AppDelegate.h */,
 				842C6F1D1924DB8C0070751B /* AppDelegate.m */,
+				9EAE6BEC192E2DC6001BECFF /* MainController.h */,
+				9EAE6BED192E2DC6001BECFF /* MainController.m */,
+				9EAE6BEF192E2F2A001BECFF /* PostController.h */,
+				9EAE6BF0192E2F2A001BECFF /* PostController.m */,
+				9EAE6BE9192E2B50001BECFF /* main.storyboard */,
 				842C6F221924DB8D0070751B /* Images.xcassets */,
 				842C6F141924DB8C0070751B /* Supporting Files */,
 			);
@@ -199,7 +210,6 @@
 		A8AC6730192A4E6600AE8CD8 /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
-				842C6F1F1924DB8D0070751B /* SampleApp.xcdatamodeld */,
 				A8AC6735192A54C000AE8CD8 /* FieldBlogImage.h */,
 				A8AC6736192A54C000AE8CD8 /* FieldBlogImage.m */,
 				9EB2B01E192B909E00F06C99 /* BlogPost.h */,
@@ -310,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				842C6F181924DB8C0070751B /* InfoPlist.strings in Resources */,
+				9EAE6BEA192E2B50001BECFF /* main.storyboard in Resources */,
 				842C6F231924DB8D0070751B /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,11 +340,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				842C6F211924DB8D0070751B /* SampleApp.xcdatamodeld in Sources */,
+				9EAE6BF1192E2F2A001BECFF /* PostController.m in Sources */,
 				9EB2B020192B909E00F06C99 /* BlogPost.m in Sources */,
 				9EB2B024192B912100F06C99 /* BlogPage.m in Sources */,
 				A8AC6737192A54C000AE8CD8 /* FieldBlogImage.m in Sources */,
 				842C6F1E1924DB8C0070751B /* AppDelegate.m in Sources */,
+				9EAE6BEE192E2DC6001BECFF /* MainController.m in Sources */,
 				842C6F1A1924DB8C0070751B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -580,19 +592,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		842C6F1F1924DB8D0070751B /* SampleApp.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				842C6F201924DB8D0070751B /* SampleApp.xcdatamodel */,
-			);
-			currentVersion = 842C6F201924DB8D0070751B /* SampleApp.xcdatamodel */;
-			path = SampleApp.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 842C6F001924DB8C0070751B /* Project object */;
 }
