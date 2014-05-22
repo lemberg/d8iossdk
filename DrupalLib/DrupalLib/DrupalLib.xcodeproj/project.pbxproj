@@ -24,6 +24,7 @@
 		9EAE4ED8192A40ED00DEB1E5 /* DrupalEntityDeserializer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9EAE4ED0192A387B00DEB1E5 /* DrupalEntityDeserializer.h */; };
 		9EAE4ED9192A414200DEB1E5 /* DrupalAPIManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9EAE4EC7192A381A00DEB1E5 /* DrupalAPIManager.h */; };
 		9EAE4EDD192A47D500DEB1E5 /* DrupalEntity+Properties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAE4EDC192A47D500DEB1E5 /* DrupalEntity+Properties.m */; };
+		9EAE6BE4192E0921001BECFF /* AFHTTPRequestOperationManager+DrupalLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAE6BE3192E0921001BECFF /* AFHTTPRequestOperationManager+DrupalLib.m */; };
 		FA1EF0BB192B94DF00E7C942 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1EF097192B94DF00E7C942 /* AFHTTPRequestOperation.m */; };
 		FA1EF0BC192B94DF00E7C942 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1EF099192B94DF00E7C942 /* AFHTTPRequestOperationManager.m */; };
 		FA1EF0BD192B94DF00E7C942 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1EF09B192B94DF00E7C942 /* AFHTTPSessionManager.m */; };
@@ -91,6 +92,8 @@
 		9EAE4ED1192A387B00DEB1E5 /* DrupalEntityDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrupalEntityDeserializer.m; sourceTree = "<group>"; };
 		9EAE4EDB192A47D500DEB1E5 /* DrupalEntity+Properties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DrupalEntity+Properties.h"; sourceTree = "<group>"; };
 		9EAE4EDC192A47D500DEB1E5 /* DrupalEntity+Properties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DrupalEntity+Properties.m"; sourceTree = "<group>"; };
+		9EAE6BE2192E0921001BECFF /* AFHTTPRequestOperationManager+DrupalLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHTTPRequestOperationManager+DrupalLib.h"; sourceTree = "<group>"; };
+		9EAE6BE3192E0921001BECFF /* AFHTTPRequestOperationManager+DrupalLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHTTPRequestOperationManager+DrupalLib.m"; sourceTree = "<group>"; };
 		9EB2B01D192B8B8800F06C99 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		FA1EF096192B94DF00E7C942 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		FA1EF097192B94DF00E7C942 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
@@ -199,6 +202,8 @@
 				9EAE4ED1192A387B00DEB1E5 /* DrupalEntityDeserializer.m */,
 				9EAE4EDB192A47D500DEB1E5 /* DrupalEntity+Properties.h */,
 				9EAE4EDC192A47D500DEB1E5 /* DrupalEntity+Properties.m */,
+				9EAE6BE2192E0921001BECFF /* AFHTTPRequestOperationManager+DrupalLib.h */,
+				9EAE6BE3192E0921001BECFF /* AFHTTPRequestOperationManager+DrupalLib.m */,
 				842C6EDA1924DAAC0070751B /* Supporting Files */,
 			);
 			path = DrupalLib;
@@ -380,6 +385,7 @@
 				9EAE4ECC192A382A00DEB1E5 /* DrupalEntity.m in Sources */,
 				FA1EF0C1192B94DF00E7C942 /* AFURLRequestSerialization.m in Sources */,
 				FA1EF0BE192B94DF00E7C942 /* AFNetworkReachabilityManager.m in Sources */,
+				9EAE6BE4192E0921001BECFF /* AFHTTPRequestOperationManager+DrupalLib.m in Sources */,
 				FA1EF0CB192B94DF00E7C942 /* UIWebView+AFNetworking.m in Sources */,
 				FA1EF0C2192B94DF00E7C942 /* AFURLResponseSerialization.m in Sources */,
 				9EAE4EDD192A47D500DEB1E5 /* DrupalEntity+Properties.m in Sources */,

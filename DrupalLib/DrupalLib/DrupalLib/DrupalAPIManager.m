@@ -7,7 +7,7 @@
 //
 
 #import "DrupalAPIManager.h"
-#import "AFNetworking.h"
+#import "AFHTTPRequestOperationManager+DrupalLib.h"
 #import "DrupalEntityDeserializer.h"
 #import "DrupalEntitySerializer.h"
 
@@ -36,9 +36,7 @@ static DrupalAPIManager *sharedDrupalAPIManager;
 
 - (void)postEntity:(DrupalEntity*)entity{
     NSString* fullPath = [self getFullPathForEntity:entity];
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [[manager requestSerializer] setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [manager POST:fullPath
+    [[AFHTTPRequestOperationManager defaultManager] POST:fullPath
        parameters:[DrupalEntitySerializer serializeEntity:entity]
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
               NSLog(@"%@",[DrupalEntitySerializer serializeEntity: entity]);
@@ -51,9 +49,7 @@ static DrupalAPIManager *sharedDrupalAPIManager;
 
 - (void)getEntity:(DrupalEntity*)entity completeHandler:(CompleteHandler)block{
     NSString* fullPath = [self getFullPathForEntity:entity];
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [[manager requestSerializer] setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [manager GET:fullPath
+    [[AFHTTPRequestOperationManager defaultManager] GET:fullPath
       parameters:[entity requestGETParams]
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              id result;
