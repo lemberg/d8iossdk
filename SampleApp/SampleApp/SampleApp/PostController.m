@@ -11,7 +11,9 @@
 #import <Social/Social.h>
 
 
-@interface PostController () <UIWebViewDelegate, UIActionSheetDelegate>
+@interface PostController () <UIWebViewDelegate, UIActionSheetDelegate> {
+    BOOL isActionSheetOpen;
+}
 
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
@@ -39,6 +41,9 @@
 
 
 - (void)share {
+    if (isActionSheetOpen)
+        return;
+    isActionSheetOpen = YES;
     [[[UIActionSheet alloc] initWithTitle:@"Share" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Facebook", @"Twitter", nil] showFromBarButtonItem:self.navigationItem.rightBarButtonItem animated:YES];
 }
 
@@ -72,6 +77,7 @@
             [self presentViewController:tweetSheet animated:YES completion:nil];
         }
     }
+    isActionSheetOpen = NO;
 }
 
 
