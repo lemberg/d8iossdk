@@ -31,6 +31,7 @@
     UIView *refreshView = [UIView new];
     [self.tableView insertSubview:refreshView atIndex:0];
     self.refreshControl = [UIRefreshControl new];
+    [self.refreshControl setTintColor:[UIColor colorWithRed:0 green:152./255. blue:186./255. alpha:1]];
     [self.refreshControl addTarget:self action:@selector(reloadFeeds) forControlEvents:UIControlEventValueChanged];
     [refreshView addSubview:self.refreshControl];
 }

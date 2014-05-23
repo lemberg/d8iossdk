@@ -68,7 +68,7 @@
 /* Begin PBXFileReference section */
 		77A9C358ECD949D63E1F22D3 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		77A9CA44AEE0A90623499A49 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
-		842C6F081924DB8C0070751B /* DrupalSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrupalSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		842C6F081924DB8C0070751B /* DrupalSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrupalSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		842C6F0B1924DB8C0070751B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		842C6F0D1924DB8C0070751B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		842C6F0F1924DB8C0070751B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -146,7 +146,7 @@
 		842C6F091924DB8C0070751B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				842C6F081924DB8C0070751B /* DrupalSDKDemo.app */,
+				842C6F081924DB8C0070751B /* DrupalSDK.app */,
 				842C6F281924DB8D0070751B /* SampleAppTests.xctest */,
 			);
 			name = Products;
@@ -257,7 +257,7 @@
 			);
 			name = SampleApp;
 			productName = SampleApp;
-			productReference = 842C6F081924DB8C0070751B /* DrupalSDKDemo.app */;
+			productReference = 842C6F081924DB8C0070751B /* DrupalSDK.app */;
 			productType = "com.apple.product-type.application";
 		};
 		842C6F271924DB8D0070751B /* SampleAppTests */ = {
@@ -510,7 +510,7 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_NAME = DrupalSDKDemo;
+				PRODUCT_NAME = DrupalSDK;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -538,7 +538,7 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_NAME = DrupalSDKDemo;
+				PRODUCT_NAME = DrupalSDK;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

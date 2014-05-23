@@ -29,6 +29,7 @@
                                             <segment title="Out Posts"/>
                                             <segment title="Tech Notes"/>
                                         </segments>
+                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="changeCategory:" destination="nPs-GN-LQx" eventType="valueChanged" id="iEx-IV-Rad"/>
                                         </connections>
@@ -166,17 +167,28 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <dataDetectorType key="dataDetectorTypes"/>
+                                <connections>
+                                    <outlet property="delegate" destination="sFP-ao-nWP" id="eCA-yu-TLp"/>
+                                </connections>
                             </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="yNt-fo-ol2">
+                                <rect key="frame" x="142" y="266" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.0" green="0.47843137254901957" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="yNt-fo-ol2" secondAttribute="centerX" id="A8Q-p0-MeT"/>
                             <constraint firstItem="UD5-ru-gL0" firstAttribute="top" secondItem="YtQ-kQ-DbQ" secondAttribute="bottom" id="OS1-Br-XLb"/>
+                            <constraint firstAttribute="centerY" secondItem="yNt-fo-ol2" secondAttribute="centerY" id="VUK-Dq-m5T"/>
                             <constraint firstItem="YtQ-kQ-DbQ" firstAttribute="leading" secondItem="SpE-D0-ney" secondAttribute="leading" id="Wbd-ob-k6T"/>
                             <constraint firstItem="YtQ-kQ-DbQ" firstAttribute="top" secondItem="j1t-DC-Nar" secondAttribute="bottom" id="dXj-Dj-cGj"/>
                             <constraint firstAttribute="trailing" secondItem="YtQ-kQ-DbQ" secondAttribute="trailing" id="s2y-aW-00R"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="yNt-fo-ol2" id="8gN-Zh-VsN"/>
                         <outlet property="webView" destination="YtQ-kQ-DbQ" id="Kgd-aa-qI7"/>
                     </connections>
                 </viewController>

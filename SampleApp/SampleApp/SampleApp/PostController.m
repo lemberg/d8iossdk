@@ -11,9 +11,10 @@
 #import <Social/Social.h>
 
 
-@interface PostController () <UIActionSheetDelegate>
+@interface PostController () <UIWebViewDelegate, UIActionSheetDelegate>
 
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -32,12 +33,20 @@
     [html appendString:@"</body></html>"];
     [self.webView loadHTMLString:html baseURL:nil];
     
+    self.title = self.post.field_blog_category;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share)];
 }
 
 
 - (void)share {
     [[[UIActionSheet alloc] initWithTitle:@"Share" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Facebook", @"Twitter", nil] showFromBarButtonItem:self.navigationItem.rightBarButtonItem animated:YES];
+}
+
+
+#pragma mark - UIWebViewDelegate
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    [self.activityIndicator stopAnimating];
 }
 
 
