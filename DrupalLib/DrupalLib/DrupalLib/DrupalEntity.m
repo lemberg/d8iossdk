@@ -12,27 +12,35 @@
 
 @implementation DrupalEntity
 
-- (void)pullFromServerWithDelegate:(id<DrupalEntityDelegate>)delegate {
-    [[DrupalAPIManager sharedDrupalAPIManager] getEntity:self completeHandler:nil];
+- (void)pullFromServer:(EntityActionHandler)handler {
+    [[DrupalAPIManager sharedDrupalAPIManager] getEntity:self completeHandler:^(id response, NSError *error) {
+        if (handler)
+            return error ? handler(self) : handler(response);
+    }];
 }
 
 
-- (void)pushToServerWithDelegate:(id<DrupalEntityDelegate>)delegate {
+- (void)pushToServerWithDelegate:(EntityActionHandler)handler {
     [[DrupalAPIManager sharedDrupalAPIManager] postEntity:self];
 }
 
 
-- (void)patchDataServerWithDelegate:(id<DrupalEntityDelegate>)delegate {
+- (void)patchDataServerWithDelegate:(EntityActionHandler)handler {
     
 }
 
 
-- (void)deleteFromServerWithDelegate:(id<DrupalEntityDelegate>)delegate {
+- (void)deleteFromServerWithDelegate:(EntityActionHandler)handler {
     
 }
 
 
 - (Class)classByPropertyName:(NSString *)propertyName {
+    return nil;
+}
+
+
+- (Class)classOfItems:(NSString *)propertyName {
     return nil;
 }
 

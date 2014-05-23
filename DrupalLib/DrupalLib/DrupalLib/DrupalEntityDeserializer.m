@@ -52,9 +52,10 @@
 
 
 + (id)deserializeEntities:(DrupalEntity *)entity fromData:(NSArray *)data {
+    Class class = [entity classOfItems:nil] ? [entity classOfItems:nil] : [entity class];
     NSMutableArray *array = [NSMutableArray array];
     for (NSDictionary *d in data)
-        [array addObject:[DrupalEntityDeserializer deserializeEntity:entity fromData:d]];
+        [array addObject:[DrupalEntityDeserializer deserializeEntityClass:class fromData:d]];
     return array;
 }
 

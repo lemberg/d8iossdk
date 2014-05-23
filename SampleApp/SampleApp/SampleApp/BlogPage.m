@@ -7,6 +7,7 @@
 //
 
 #import "BlogPage.h"
+#import "BlogPost.h"
 
 
 @implementation BlogPage
@@ -20,5 +21,9 @@
     return [NSString stringWithFormat:@"blog-rest"];
 }
 
+
+- (Class)classOfItems:(NSString *)propertyName {
+    return [BlogPost class];
+}
 
 @end

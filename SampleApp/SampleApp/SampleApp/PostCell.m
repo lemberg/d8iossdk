@@ -1,14 +1,14 @@
 //
-//  MainController.h
+//  PostCell.m
 //  SampleApp
 //
 //  Created by Oleg Stasula on 23.05.14.
 //  Copyright (c) 2014 ls. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "PostCell.h"
 
 
-@interface MainController : UIViewController
+@implementation PostCell
 
 @end

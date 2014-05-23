@@ -30,7 +30,7 @@
 @property (nonatomic) NSString *sticky;
 @property (nonatomic) NSString *revision_timestemp;
 @property (nonatomic) NSString *log;
-@property (nonatomic) NSString *field_blog_cathegory;
-@property (nonatomic) FieldBlogImage *field_blog_image;
+@property (nonatomic) NSString *field_blog_category;
+@property (nonatomic) NSString *field_blog_image;
 
 @end

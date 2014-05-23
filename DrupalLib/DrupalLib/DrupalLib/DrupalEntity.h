@@ -8,18 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void (^EntityActionHandler)(id result);
 
 @class DrupalEntity;
-
-@protocol DrupalEntityDelegate <NSObject>
-
-- (void)entity:(DrupalEntity *)entity failedRequestWithError:(NSError *)error;
-- (void)entityDidRemove:(DrupalEntity *)entity;
-- (void)entityDidPush:(DrupalEntity *)entity;
-- (void)entityDidPull:(DrupalEntity *)entity;
-- (void)entityDidPatched:(DrupalEntity *)entity;
-
-@end
 
 
 @interface DrupalEntity : NSObject
@@ -27,12 +18,13 @@
 @property (strong, nonatomic) NSString *path;
 @property (strong, nonatomic) NSString *oid;
 
-- (void)pullFromServerWithDelegate:(id <DrupalEntityDelegate>) delegate;
-- (void)pushToServerWithDelegate:(id <DrupalEntityDelegate>) delegate;
-- (void)patchDataServerWithDelegate:(id <DrupalEntityDelegate>) delegate;
-- (void)deleteFromServerWithDelegate:(id <DrupalEntityDelegate>) delegate;
+- (void)pullFromServer:(EntityActionHandler)handler;
+- (void)pushToServerWithDelegate:(EntityActionHandler)handler;
+- (void)patchDataServerWithDelegate:(EntityActionHandler)handler;
+- (void)deleteFromServerWithDelegate:(EntityActionHandler)handler;
 
 - (Class)classByPropertyName:(NSString *)propertyName;
+- (Class)classOfItems:(NSString *)propertyName;
 - (NSDictionary *)requestGETParams;
 
 @end

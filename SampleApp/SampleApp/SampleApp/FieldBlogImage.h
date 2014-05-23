@@ -7,8 +7,6 @@
 //
 
 #import <DrupalLib/DrupalEntity.h>
-#import <DrupalLib/DrupalSet.h>
-#import <DrupalLib/DrupalDictionary.h>
 
 @interface FieldBlogImage : DrupalEntity
 

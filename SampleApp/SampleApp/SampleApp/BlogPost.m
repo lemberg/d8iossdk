@@ -13,8 +13,8 @@
 @implementation BlogPost
 
 - (Class)classByPropertyName:(NSString *)propertyName {
-    if ([propertyName isEqualToString:@"field_blog_image"])
-        return [FieldBlogImage class];
+//    if ([propertyName isEqualToString:@"field_blog_image"])
+//        return [FieldBlogImage class];
     return nil;
 }
 
@@ -22,5 +22,6 @@
 - (NSString *)path {
     return [NSString stringWithFormat:@"node/%@", self.nid];
 }
+
 
 @end

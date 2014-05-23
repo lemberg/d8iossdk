@@ -12,26 +12,15 @@
 #import <DrupalLib/DrupalEntityDeserializer.h>
 #import <DrupalLib/DrupalEntity.h>
 #import <DrupalLib/DrupalAPIManager.h>
+#import "DataManager.h"
 
-#import <objc/runtime.h>
-
-#import "BlogPost.h"
-#import "BlogPage.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [DrupalAPIManager sharedDrupalAPIManager].baseURL = [NSURL URLWithString:@"http://vh015.uk.dev-ls.co.uk"];
-    
-    BlogPage *page = [BlogPage new];
-    page.page = @(1);
-    [page pullFromServerWithDelegate:nil];
-    
-    BlogPost *post = [BlogPost new];
-    post.nid = @"3";
-    [post pullFromServerWithDelegate:nil];
-    
+    [[DataManager manager] loadPosts];
     return YES;
 }
 

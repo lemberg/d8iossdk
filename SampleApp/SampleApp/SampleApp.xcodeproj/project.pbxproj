@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		77A9CA1081FD7454D7FC27B6 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A9CA44AEE0A90623499A49 /* DataManager.m */; };
 		842C6F0C1924DB8C0070751B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842C6F0B1924DB8C0070751B /* Foundation.framework */; };
 		842C6F0E1924DB8C0070751B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842C6F0D1924DB8C0070751B /* CoreGraphics.framework */; };
 		842C6F101924DB8C0070751B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842C6F0F1924DB8C0070751B /* UIKit.framework */; };
@@ -22,8 +23,11 @@
 		842C6F351924DB8D0070751B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 842C6F331924DB8D0070751B /* InfoPlist.strings */; };
 		842C6F371924DB8D0070751B /* SampleAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C6F361924DB8D0070751B /* SampleAppTests.m */; };
 		84FF7D03192635A50003D710 /* libDrupalLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FF7CFA192631330003D710 /* libDrupalLib.a */; };
+		9E2B07E5192F621D00F445B6 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2B07E4192F621D00F445B6 /* MainController.m */; };
+		9E2B07EC192F8FA600F445B6 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2B07EB192F8FA600F445B6 /* PostCell.m */; };
+		9E2B07EE192F930200F445B6 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2B07ED192F930200F445B6 /* Social.framework */; };
 		9EAE6BEA192E2B50001BECFF /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EAE6BE9192E2B50001BECFF /* main.storyboard */; };
-		9EAE6BEE192E2DC6001BECFF /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAE6BED192E2DC6001BECFF /* MainController.m */; };
+		9EAE6BEE192E2DC6001BECFF /* PostsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAE6BED192E2DC6001BECFF /* PostsController.m */; };
 		9EAE6BF1192E2F2A001BECFF /* PostController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAE6BF0192E2F2A001BECFF /* PostController.m */; };
 		9EB2B020192B909E00F06C99 /* BlogPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB2B01F192B909E00F06C99 /* BlogPost.m */; };
 		9EB2B024192B912100F06C99 /* BlogPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB2B023192B912100F06C99 /* BlogPage.m */; };
@@ -62,7 +66,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		842C6F081924DB8C0070751B /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		77A9C358ECD949D63E1F22D3 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		77A9CA44AEE0A90623499A49 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		842C6F081924DB8C0070751B /* DrupalSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrupalSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		842C6F0B1924DB8C0070751B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		842C6F0D1924DB8C0070751B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		842C6F0F1924DB8C0070751B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -80,9 +86,14 @@
 		842C6F341924DB8D0070751B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		842C6F361924DB8D0070751B /* SampleAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleAppTests.m; sourceTree = "<group>"; };
 		84FF7CF4192631330003D710 /* DrupalLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DrupalLib.xcodeproj; path = ../../DrupalLib/DrupalLib/DrupalLib.xcodeproj; sourceTree = "<group>"; };
+		9E2B07E1192F5ED800F445B6 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
+		9E2B07E4192F621D00F445B6 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
+		9E2B07EA192F8FA600F445B6 /* PostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
+		9E2B07EB192F8FA600F445B6 /* PostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
+		9E2B07ED192F930200F445B6 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		9EAE6BE9192E2B50001BECFF /* main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = main.storyboard; sourceTree = "<group>"; };
-		9EAE6BEC192E2DC6001BECFF /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
-		9EAE6BED192E2DC6001BECFF /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
+		9EAE6BEC192E2DC6001BECFF /* PostsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostsController.h; sourceTree = "<group>"; };
+		9EAE6BED192E2DC6001BECFF /* PostsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostsController.m; sourceTree = "<group>"; };
 		9EAE6BEF192E2F2A001BECFF /* PostController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostController.h; sourceTree = "<group>"; };
 		9EAE6BF0192E2F2A001BECFF /* PostController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostController.m; sourceTree = "<group>"; };
 		9EB2B01E192B909E00F06C99 /* BlogPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogPost.h; sourceTree = "<group>"; };
@@ -98,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E2B07EE192F930200F445B6 /* Social.framework in Frameworks */,
 				84FF7D03192635A50003D710 /* libDrupalLib.a in Frameworks */,
 				842C6F0E1924DB8C0070751B /* CoreGraphics.framework in Frameworks */,
 				842C6F121924DB8C0070751B /* CoreData.framework in Frameworks */,
@@ -134,7 +146,7 @@
 		842C6F091924DB8C0070751B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				842C6F081924DB8C0070751B /* SampleApp.app */,
+				842C6F081924DB8C0070751B /* DrupalSDKDemo.app */,
 				842C6F281924DB8D0070751B /* SampleAppTests.xctest */,
 			);
 			name = Products;
@@ -143,6 +155,7 @@
 		842C6F0A1924DB8C0070751B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9E2B07ED192F930200F445B6 /* Social.framework */,
 				842C6F0B1924DB8C0070751B /* Foundation.framework */,
 				842C6F0D1924DB8C0070751B /* CoreGraphics.framework */,
 				842C6F0F1924DB8C0070751B /* UIKit.framework */,
@@ -158,10 +171,16 @@
 				A8AC6730192A4E6600AE8CD8 /* DataBase */,
 				842C6F1C1924DB8C0070751B /* AppDelegate.h */,
 				842C6F1D1924DB8C0070751B /* AppDelegate.m */,
-				9EAE6BEC192E2DC6001BECFF /* MainController.h */,
-				9EAE6BED192E2DC6001BECFF /* MainController.m */,
+				9E2B07E1192F5ED800F445B6 /* MainController.h */,
+				9E2B07E4192F621D00F445B6 /* MainController.m */,
+				9EAE6BEC192E2DC6001BECFF /* PostsController.h */,
+				9EAE6BED192E2DC6001BECFF /* PostsController.m */,
+				9E2B07EA192F8FA600F445B6 /* PostCell.h */,
+				9E2B07EB192F8FA600F445B6 /* PostCell.m */,
 				9EAE6BEF192E2F2A001BECFF /* PostController.h */,
 				9EAE6BF0192E2F2A001BECFF /* PostController.m */,
+				77A9C358ECD949D63E1F22D3 /* DataManager.h */,
+				77A9CA44AEE0A90623499A49 /* DataManager.m */,
 				9EAE6BE9192E2B50001BECFF /* main.storyboard */,
 				842C6F221924DB8D0070751B /* Images.xcassets */,
 				842C6F141924DB8C0070751B /* Supporting Files */,
@@ -238,7 +257,7 @@
 			);
 			name = SampleApp;
 			productName = SampleApp;
-			productReference = 842C6F081924DB8C0070751B /* SampleApp.app */;
+			productReference = 842C6F081924DB8C0070751B /* DrupalSDKDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 		842C6F271924DB8D0070751B /* SampleAppTests */ = {
@@ -341,12 +360,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EAE6BF1192E2F2A001BECFF /* PostController.m in Sources */,
+				9E2B07E5192F621D00F445B6 /* MainController.m in Sources */,
 				9EB2B020192B909E00F06C99 /* BlogPost.m in Sources */,
 				9EB2B024192B912100F06C99 /* BlogPage.m in Sources */,
 				A8AC6737192A54C000AE8CD8 /* FieldBlogImage.m in Sources */,
 				842C6F1E1924DB8C0070751B /* AppDelegate.m in Sources */,
-				9EAE6BEE192E2DC6001BECFF /* MainController.m in Sources */,
+				9EAE6BEE192E2DC6001BECFF /* PostsController.m in Sources */,
 				842C6F1A1924DB8C0070751B /* main.m in Sources */,
+				77A9CA1081FD7454D7FC27B6 /* DataManager.m in Sources */,
+				9E2B07EC192F8FA600F445B6 /* PostCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,7 +510,7 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = DrupalSDKDemo;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -516,7 +538,7 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = DrupalSDKDemo;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
