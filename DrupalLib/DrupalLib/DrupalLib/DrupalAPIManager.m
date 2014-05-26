@@ -7,23 +7,15 @@
 //
 
 #import "DrupalAPIManager.h"
-#import "AFHTTPRequestOperationManager+DrupalLib.h"
 #import "DrupalEntityDeserializer.h"
 #import "DrupalEntitySerializer.h"
+#import "AFHTTPRequestOperationManager+DrupalLib.h"
 
 
 static DrupalAPIManager *sharedDrupalAPIManager;
 
 
 @implementation DrupalAPIManager
-
-- (id)init{
-    self = [super init];
-    if (self) {
-    }
-    return self;
-}
-
 
 + (DrupalAPIManager*)sharedDrupalAPIManager{
     static dispatch_once_t onceToken;
@@ -35,20 +27,20 @@ static DrupalAPIManager *sharedDrupalAPIManager;
 
 
 - (void)postEntity:(DrupalEntity*)entity{
-    NSString* fullPath = [self getFullPathForEntity:entity];
+    NSString* fullPath = [self pathForEntity:entity];
     [[AFHTTPRequestOperationManager defaultManager] POST:fullPath
        parameters:[DrupalEntitySerializer serializeEntity:entity]
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
               NSLog(@"%@",[DrupalEntitySerializer serializeEntity: entity]);
           }
           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-              NSLog(@"getEntity error:%@",error.description);
+              NSLog(@"postEntity error:%@",error.description);
           }];
 }
 
 
 - (void)getEntity:(DrupalEntity*)entity completeHandler:(CompleteHandler)block{
-    NSString* fullPath = [self getFullPathForEntity:entity];
+    NSString* fullPath = [self pathForEntity:entity];
     [[AFHTTPRequestOperationManager defaultManager] GET:fullPath
       parameters:[entity requestGETParams]
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -69,7 +61,7 @@ static DrupalAPIManager *sharedDrupalAPIManager;
 }
 
 
-- (NSString*)getFullPathForEntity:(DrupalEntity*)entity{
+- (NSString*)pathForEntity:(DrupalEntity*)entity{
     NSString* fullPath = [[self.baseURL absoluteString]stringByAppendingPathComponent: entity.path];
     return fullPath;
 }

@@ -37,6 +37,8 @@
                 value = obj;
             } else if ([itemClass isSubclassOfClass:[DrupalEntity class]] && [propClass isSubclassOfClass:[DrupalEntity class]]) {
                 value = [DrupalEntityDeserializer deserializeEntityClass:itemClass fromData:[value firstObject]];
+            } else if ([propClass isSubclassOfClass:[NSDictionary class]]) {
+                value = [value firstObject]; 
             } else if (![propClass isSubclassOfClass:[NSArray class]]) {
                 value = [value firstObject];
                 if ([value isKindOfClass:[NSDictionary class]]) {
@@ -71,5 +73,6 @@
         [array addObject:[DrupalEntityDeserializer deserializeEntity:[entityClass new] fromData:d]];
     return array;
 }
+
 
 @end

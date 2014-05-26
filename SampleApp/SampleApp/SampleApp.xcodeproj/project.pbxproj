@@ -26,6 +26,8 @@
 		9E2B07E5192F621D00F445B6 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2B07E4192F621D00F445B6 /* MainController.m */; };
 		9E2B07EC192F8FA600F445B6 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2B07EB192F8FA600F445B6 /* PostCell.m */; };
 		9E2B07EE192F930200F445B6 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2B07ED192F930200F445B6 /* Social.framework */; };
+		9EAB212C19334F76008F5612 /* template.html in Resources */ = {isa = PBXBuildFile; fileRef = 9EAB212B19334F76008F5612 /* template.html */; };
+		9EAB212F193366EC008F5612 /* BlogPostPreview.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAB212E193366EC008F5612 /* BlogPostPreview.m */; };
 		9EAE6BEA192E2B50001BECFF /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EAE6BE9192E2B50001BECFF /* main.storyboard */; };
 		9EAE6BEE192E2DC6001BECFF /* PostsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAE6BED192E2DC6001BECFF /* PostsController.m */; };
 		9EAE6BF1192E2F2A001BECFF /* PostController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAE6BF0192E2F2A001BECFF /* PostController.m */; };
@@ -68,7 +70,7 @@
 /* Begin PBXFileReference section */
 		77A9C358ECD949D63E1F22D3 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		77A9CA44AEE0A90623499A49 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
-		842C6F081924DB8C0070751B /* DrupalSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrupalSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		842C6F081924DB8C0070751B /* Drupal8 SDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Drupal8 SDK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		842C6F0B1924DB8C0070751B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		842C6F0D1924DB8C0070751B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		842C6F0F1924DB8C0070751B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -91,6 +93,9 @@
 		9E2B07EA192F8FA600F445B6 /* PostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
 		9E2B07EB192F8FA600F445B6 /* PostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
 		9E2B07ED192F930200F445B6 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		9EAB212B19334F76008F5612 /* template.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = template.html; sourceTree = "<group>"; };
+		9EAB212D193366EC008F5612 /* BlogPostPreview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogPostPreview.h; sourceTree = "<group>"; };
+		9EAB212E193366EC008F5612 /* BlogPostPreview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogPostPreview.m; sourceTree = "<group>"; };
 		9EAE6BE9192E2B50001BECFF /* main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = main.storyboard; sourceTree = "<group>"; };
 		9EAE6BEC192E2DC6001BECFF /* PostsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostsController.h; sourceTree = "<group>"; };
 		9EAE6BED192E2DC6001BECFF /* PostsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostsController.m; sourceTree = "<group>"; };
@@ -146,7 +151,7 @@
 		842C6F091924DB8C0070751B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				842C6F081924DB8C0070751B /* DrupalSDK.app */,
+				842C6F081924DB8C0070751B /* Drupal8 SDK.app */,
 				842C6F281924DB8D0070751B /* SampleAppTests.xctest */,
 			);
 			name = Products;
@@ -182,6 +187,7 @@
 				77A9C358ECD949D63E1F22D3 /* DataManager.h */,
 				77A9CA44AEE0A90623499A49 /* DataManager.m */,
 				9EAE6BE9192E2B50001BECFF /* main.storyboard */,
+				9EAB212B19334F76008F5612 /* template.html */,
 				842C6F221924DB8D0070751B /* Images.xcassets */,
 				842C6F141924DB8C0070751B /* Supporting Files */,
 			);
@@ -233,6 +239,8 @@
 				A8AC6736192A54C000AE8CD8 /* FieldBlogImage.m */,
 				9EB2B01E192B909E00F06C99 /* BlogPost.h */,
 				9EB2B01F192B909E00F06C99 /* BlogPost.m */,
+				9EAB212D193366EC008F5612 /* BlogPostPreview.h */,
+				9EAB212E193366EC008F5612 /* BlogPostPreview.m */,
 				9EB2B022192B912100F06C99 /* BlogPage.h */,
 				9EB2B023192B912100F06C99 /* BlogPage.m */,
 			);
@@ -257,7 +265,7 @@
 			);
 			name = SampleApp;
 			productName = SampleApp;
-			productReference = 842C6F081924DB8C0070751B /* DrupalSDK.app */;
+			productReference = 842C6F081924DB8C0070751B /* Drupal8 SDK.app */;
 			productType = "com.apple.product-type.application";
 		};
 		842C6F271924DB8D0070751B /* SampleAppTests */ = {
@@ -338,6 +346,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EAB212C19334F76008F5612 /* template.html in Resources */,
 				842C6F181924DB8C0070751B /* InfoPlist.strings in Resources */,
 				9EAE6BEA192E2B50001BECFF /* main.storyboard in Resources */,
 				842C6F231924DB8D0070751B /* Images.xcassets in Resources */,
@@ -359,6 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EAB212F193366EC008F5612 /* BlogPostPreview.m in Sources */,
 				9EAE6BF1192E2F2A001BECFF /* PostController.m in Sources */,
 				9E2B07E5192F621D00F445B6 /* MainController.m in Sources */,
 				9EB2B020192B909E00F06C99 /* BlogPost.m in Sources */,
@@ -510,7 +520,7 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_NAME = DrupalSDK;
+				PRODUCT_NAME = "Drupal8 SDK";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -538,7 +548,7 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_NAME = DrupalSDK;
+				PRODUCT_NAME = "Drupal8 SDK";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

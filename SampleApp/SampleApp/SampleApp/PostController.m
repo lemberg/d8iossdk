@@ -15,6 +15,7 @@
     BOOL isActionSheetOpen;
 }
 
+@property (nonatomic) BlogPost *post;
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
@@ -27,16 +28,27 @@
 {
     [super viewDidLoad];
     
-    NSMutableString *html = [NSMutableString string];
-    [html appendString:@"<html><head><meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0,maximum-scale=1\" /><style>h3{padding: 0; margin: 0;} img {max-width: 100%; heigth: auto;}</style></head><body style=\"background-color: transparent; font-family: HelveticaNeue-Light; color: #686868;\">"];
-    [html appendFormat:@"<h3>%@</h3>", self.post.title];
-    [html appendFormat:@"<p>%@</p>", self.post.field_blog_image];
-    [html appendString:self.post.body];
-    [html appendString:@"</body></html>"];
-    [self.webView loadHTMLString:html baseURL:nil];
-    
-    self.title = self.post.field_blog_category;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share)];
+    BlogPost *post = [BlogPost new];
+    post.nid = self.postId;
+    [post pullFromServer:^(id result) {
+        self.post = result;
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"template" ofType:@"html"];
+        NSError *error;
+        NSMutableString *html = [NSMutableString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
+        [html replaceOccurrencesOfString:@"%ARTICLE_TITLE%" withString:self.post.title options:(NSLiteralSearch) range:NSMakeRange(0, html.length)];
+        NSMutableString *body = [NSMutableString stringWithString:self.post.body[@"value"]];
+        NSString *date;
+        if (self.post.field_blog_author && ![self.post.field_blog_author isKindOfClass:[NSNull class]] && ![self.post.field_blog_author isEqualToString:@""])
+            date = [NSString stringWithFormat:@"%@ by %@", self.post.field_blog_date, self.post.field_blog_author];
+        else
+            date = self.post.field_blog_date;
+        body = (NSMutableString *)[[NSString stringWithFormat:@"<p style=\"color: #888;\">%@</p>", date] stringByAppendingString:body];
+        [html replaceOccurrencesOfString:@"%ARTICLE_BODY%" withString:body options:(NSLiteralSearch) range:NSMakeRange(0, html.length)];
+        [self.webView loadHTMLString:html baseURL:nil];
+        
+        self.title = self.post.field_blog_category;
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share)];
+    }];
 }
 
 

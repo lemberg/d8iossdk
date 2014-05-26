@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@class BlogPost;
 
 @interface PostController : UIViewController
 
-@property (nonatomic) BlogPost *post;
+@property (nonatomic) NSString *postId;
 
 @end

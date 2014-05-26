@@ -7,7 +7,7 @@
 //
 
 #import "BlogPage.h"
-#import "BlogPost.h"
+#import "BlogPostPreview.h"
 
 
 @implementation BlogPage
@@ -23,7 +23,7 @@
 
 
 - (Class)classOfItems:(NSString *)propertyName {
-    return [BlogPost class];
+    return [BlogPostPreview class];
 }
 
 @end

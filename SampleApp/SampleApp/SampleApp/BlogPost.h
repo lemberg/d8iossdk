@@ -11,10 +11,11 @@
 
 @class FieldBlogImage;
 
+
 @interface BlogPost : DrupalEntity
 
 @property (nonatomic) NSString *title;
-@property (nonatomic) NSString *body;
+@property (nonatomic) NSDictionary *body;
 @property (nonatomic) NSString *nid;
 @property (nonatomic) NSString *field_blog_author;
 @property (nonatomic) NSString *field_blog_date;

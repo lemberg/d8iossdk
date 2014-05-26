@@ -9,6 +9,7 @@
 #import "MainController.h"
 #import "PostsController.h"
 #import "PostController.h"
+#import "BlogPostPreview.h"
 
 
 @interface MainController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
@@ -47,8 +48,9 @@
 
 
 - (void)openBlogPost:(NSNotification *)n {
+    BlogPostPreview *bp = (BlogPostPreview *)n.object;
     PostController *pc = [self.storyboard instantiateViewControllerWithIdentifier:@"PostController"];
-    pc.post = n.object;
+    pc.postId = bp.nid;
     [self.navigationController pushViewController:pc animated:YES];
 }
 

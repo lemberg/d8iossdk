@@ -21,7 +21,6 @@ typedef void (^CompleteHandler)(id response, NSError *error);
 
 - (void)postEntity:(DrupalEntity*)entity;
 - (void)getEntity:(DrupalEntity*)entity completeHandler:(CompleteHandler)block;
-
-- (NSString*)getFullPathForEntity:(DrupalEntity*)entity;
+- (NSString*)pathForEntity:(DrupalEntity*)entity;
 
 @end

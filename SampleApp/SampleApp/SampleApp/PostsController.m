@@ -9,7 +9,7 @@
 #import "PostsController.h"
 #import "PostController.h"
 #import "BlogPage.h"
-#import "BlogPost.h"
+#import "BlogPostPreview.h"
 #import "DataManager.h"
 #import "PostCell.h"
 
@@ -64,11 +64,10 @@
     static NSString *cellId = @"postCellId";
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     NSAssert(cell, @"no cell prototype");
-    BlogPost *bp = [self.posts objectAtIndex:indexPath.row];
-    NSInteger start = [bp.title rangeOfString:@"\">"].location + 2;
-    NSInteger end = [bp.title rangeOfString:@"</a>"].location;
-    cell.titleLabel.text = [bp.title substringWithRange:NSMakeRange(start, end - start)];
-    cell.detailLabel.text = [NSString stringWithFormat:@"%@ by %@", bp.field_blog_date, [bp.field_blog_author isKindOfClass:[NSNull class]] ? @"" : bp.field_blog_author];
+    BlogPostPreview *bp = [self.posts objectAtIndex:indexPath.row];
+    cell.titleLabel.text = bp.title;
+    cell.dateLabel.text = [NSString stringWithFormat:@"%@ %@", bp.field_blog_date, ([bp.field_blog_author isKindOfClass:[NSNull class]] || [bp.field_blog_author isEqualToString:@""]) ? @"" : [@"by " stringByAppendingString:bp.field_blog_author]];
+    cell.detailLabel.text = bp.body;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSURL *url = [NSURL URLWithString:bp.field_file];
         NSData *data = [NSData dataWithContentsOfURL:url];
@@ -84,15 +83,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [[NSNotificationCenter defaultCenter] postNotificationName:kDidSelectBlopPostNotification object:[self.posts objectAtIndex:indexPath.row] userInfo:nil];
-}
-
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"openPostDetails"]) {
-        PostController *pc = segue.destinationViewController;
-        BlogPost *bp = [self.posts objectAtIndex:self.tableView.indexPathForSelectedRow.row];
-        pc.post = bp;
-    }
 }
 
 

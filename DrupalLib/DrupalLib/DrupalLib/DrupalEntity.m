@@ -26,12 +26,12 @@
 
 
 - (void)patchServerData:(EntityActionHandler)handler {
-    
+    //  TODO: implement patching object on server    
 }
 
 
 - (void)deleteFromServer:(EntityActionHandler)handler {
-    
+    //  TODO: implement deleting object from server
 }
 
 
@@ -47,11 +47,6 @@
 
 - (NSDictionary *)requestGETParams {
     return nil;
-}
-
-
-- (NSString *)description {
-    return [NSString stringWithFormat:@"%@ %@", self.oid, self.path];
 }
 
 

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 typedef void (^EntityActionHandler)(id result);
 
 @class DrupalEntity;
@@ -16,7 +17,6 @@ typedef void (^EntityActionHandler)(id result);
 @interface DrupalEntity : NSObject
 
 @property (strong, nonatomic) NSString *path;
-@property (strong, nonatomic) NSString *oid;
 
 - (void)pullFromServer:(EntityActionHandler)handler;
 - (void)pushToServer:(EntityActionHandler)handler;
