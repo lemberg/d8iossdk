@@ -1,8 +1,8 @@
-DrupalLib
+Drupal8 iOS SDK
 =====================
 
 
-DrupalLib is an iOS framework for implementing RESTful web services clients. 
+Drupal8 SDK is an iOS framework for implementing RESTful web services clients. 
 
 ----------
 
