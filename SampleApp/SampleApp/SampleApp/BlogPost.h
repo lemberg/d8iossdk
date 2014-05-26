@@ -32,5 +32,6 @@
 @property (nonatomic) NSString *log;
 @property (nonatomic) NSString *field_blog_category;
 @property (nonatomic) NSString *field_blog_image;
+@property (nonatomic) NSString *field_file;
 
 @end

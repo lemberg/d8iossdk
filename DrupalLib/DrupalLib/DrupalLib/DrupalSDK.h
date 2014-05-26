@@ -9,4 +9,6 @@
 #ifndef DrupalLib_DrupalSDK_h
 #define DrupalLib_DrupalSDK_h
 
+#import "DrupalEntity.h"
+
 #endif

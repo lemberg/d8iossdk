@@ -69,6 +69,14 @@
     NSInteger end = [bp.title rangeOfString:@"</a>"].location;
     cell.titleLabel.text = [bp.title substringWithRange:NSMakeRange(start, end - start)];
     cell.detailLabel.text = [NSString stringWithFormat:@"%@ by %@", bp.field_blog_date, [bp.field_blog_author isKindOfClass:[NSNull class]] ? @"" : bp.field_blog_author];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSURL *url = [NSURL URLWithString:bp.field_file];
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        UIImage *image = [UIImage imageWithData:data];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [cell.postImageView setImage:image];
+        });
+    });
     return cell;
 }
 
