@@ -20,4 +20,6 @@
 @property (nonatomic) NSString *field_blog_image;
 @property (nonatomic) NSString *field_file;
 
+- (NSString *)dateAndAuthor;
+
 @end

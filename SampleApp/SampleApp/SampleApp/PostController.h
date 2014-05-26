@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 
 
+@class BlogPostPreview;
+
 @interface PostController : UIViewController
 
-@property (nonatomic) NSString *postId;
+@property (nonatomic) BlogPostPreview *postPreview;
 
 @end

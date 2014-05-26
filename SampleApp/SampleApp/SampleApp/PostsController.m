@@ -31,7 +31,7 @@
     UIView *refreshView = [UIView new];
     [self.tableView insertSubview:refreshView atIndex:0];
     self.refreshControl = [UIRefreshControl new];
-    [self.refreshControl setTintColor:[UIColor colorWithRed:0 green:152./255. blue:186./255. alpha:1]];
+    [self.refreshControl setTintColor:kLembergPrimaryColor];
     [self.refreshControl addTarget:self action:@selector(reloadFeeds) forControlEvents:UIControlEventValueChanged];
     [refreshView addSubview:self.refreshControl];
 }
@@ -64,9 +64,10 @@
     static NSString *cellId = @"postCellId";
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     NSAssert(cell, @"no cell prototype");
+    
     BlogPostPreview *bp = [self.posts objectAtIndex:indexPath.row];
     cell.titleLabel.text = bp.title;
-    cell.dateLabel.text = [NSString stringWithFormat:@"%@ %@", bp.field_blog_date, ([bp.field_blog_author isKindOfClass:[NSNull class]] || [bp.field_blog_author isEqualToString:@""]) ? @"" : [@"by " stringByAppendingString:bp.field_blog_author]];
+    cell.dateLabel.text = [bp dateAndAuthor];
     cell.detailLabel.text = bp.body;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSURL *url = [NSURL URLWithString:bp.field_file];

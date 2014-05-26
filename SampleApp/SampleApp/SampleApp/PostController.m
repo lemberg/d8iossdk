@@ -7,6 +7,7 @@
 //
 
 #import "PostController.h"
+#import "BlogPostPreview.h"
 #import "BlogPost.h"
 #import <Social/Social.h>
 
@@ -29,26 +30,20 @@
     [super viewDidLoad];
     
     BlogPost *post = [BlogPost new];
-    post.nid = self.postId;
+    post.nid = self.postPreview.nid;
     [post pullFromServer:^(id result) {
         self.post = result;
+        
         NSString *path = [[NSBundle mainBundle] pathForResource:@"template" ofType:@"html"];
-        NSError *error;
-        NSMutableString *html = [NSMutableString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
+        NSMutableString *html = [NSMutableString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
         [html replaceOccurrencesOfString:@"%ARTICLE_TITLE%" withString:self.post.title options:(NSLiteralSearch) range:NSMakeRange(0, html.length)];
-        NSMutableString *body = [NSMutableString stringWithString:self.post.body[@"value"]];
-        NSString *date;
-        if (self.post.field_blog_author && ![self.post.field_blog_author isKindOfClass:[NSNull class]] && ![self.post.field_blog_author isEqualToString:@""])
-            date = [NSString stringWithFormat:@"%@ by %@", self.post.field_blog_date, self.post.field_blog_author];
-        else
-            date = self.post.field_blog_date;
-        body = (NSMutableString *)[[NSString stringWithFormat:@"<p style=\"color: #888;\">%@</p>", date] stringByAppendingString:body];
+        NSString *body = [NSString stringWithFormat:@"<p style=\"color: #888;\">%@</p>%@", [self.postPreview dateAndAuthor], self.post.body[@"value"]];
         [html replaceOccurrencesOfString:@"%ARTICLE_BODY%" withString:body options:(NSLiteralSearch) range:NSMakeRange(0, html.length)];
         [self.webView loadHTMLString:html baseURL:nil];
-        
-        self.title = self.post.field_blog_category;
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share)];
     }];
+    
+    self.title = self.postPreview.field_blog_category;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share)];
 }
 
 

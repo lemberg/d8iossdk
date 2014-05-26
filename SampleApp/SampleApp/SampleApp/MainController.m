@@ -48,9 +48,8 @@
 
 
 - (void)openBlogPost:(NSNotification *)n {
-    BlogPostPreview *bp = (BlogPostPreview *)n.object;
     PostController *pc = [self.storyboard instantiateViewControllerWithIdentifier:@"PostController"];
-    pc.postId = bp.nid;
+    pc.postPreview = n.object;
     [self.navigationController pushViewController:pc animated:YES];
 }
 
