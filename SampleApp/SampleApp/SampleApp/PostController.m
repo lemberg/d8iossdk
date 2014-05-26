@@ -28,7 +28,7 @@
     [super viewDidLoad];
     
     NSMutableString *html = [NSMutableString string];
-    [html appendString:@"<html><head><style>h3{padding: 0; margin: 0;} img {max-width: 100%; heigth: auto;}</style></head><body style=\"background-color: transparent; font-family: HelveticaNeue-Light; color: #686868;\">"];
+    [html appendString:@"<html><head><meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0,maximum-scale=1\" /><style>h3{padding: 0; margin: 0;} img {max-width: 100%; heigth: auto;}</style></head><body style=\"background-color: transparent; font-family: HelveticaNeue-Light; color: #686868;\">"];
     [html appendFormat:@"<h3>%@</h3>", self.post.title];
     [html appendFormat:@"<p>%@</p>", self.post.field_blog_image];
     [html appendString:self.post.body];

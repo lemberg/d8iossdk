@@ -19,9 +19,9 @@ typedef void (^EntityActionHandler)(id result);
 @property (strong, nonatomic) NSString *oid;
 
 - (void)pullFromServer:(EntityActionHandler)handler;
-- (void)pushToServerWithDelegate:(EntityActionHandler)handler;
-- (void)patchDataServerWithDelegate:(EntityActionHandler)handler;
-- (void)deleteFromServerWithDelegate:(EntityActionHandler)handler;
+- (void)pushToServer:(EntityActionHandler)handler;
+- (void)patchServerData:(EntityActionHandler)handler;
+- (void)deleteFromServer:(EntityActionHandler)handler;
 
 - (Class)classByPropertyName:(NSString *)propertyName;
 - (Class)classOfItems:(NSString *)propertyName;

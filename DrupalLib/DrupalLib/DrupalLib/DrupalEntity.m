@@ -20,17 +20,17 @@
 }
 
 
-- (void)pushToServerWithDelegate:(EntityActionHandler)handler {
+- (void)pushToServer:(EntityActionHandler)handler {
     [[DrupalAPIManager sharedDrupalAPIManager] postEntity:self];
 }
 
 
-- (void)patchDataServerWithDelegate:(EntityActionHandler)handler {
+- (void)patchServerData:(EntityActionHandler)handler {
     
 }
 
 
-- (void)deleteFromServerWithDelegate:(EntityActionHandler)handler {
+- (void)deleteFromServer:(EntityActionHandler)handler {
     
 }
 
