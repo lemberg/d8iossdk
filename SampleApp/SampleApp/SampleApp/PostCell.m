@@ -11,4 +11,9 @@
 
 @implementation PostCell
 
+- (void)awakeFromNib {
+    self.titleLabel.numberOfLines = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 2 : 3;
+}
+
+
 @end
