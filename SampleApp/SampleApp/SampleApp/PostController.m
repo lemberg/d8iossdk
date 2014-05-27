@@ -36,6 +36,7 @@
         
         NSString *path = [[NSBundle mainBundle] pathForResource:@"template" ofType:@"html"];
         NSMutableString *html = [NSMutableString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+        [html replaceOccurrencesOfString:@"%ARTICLE_IMAGE_URL%" withString:self.postPreview.field_file options:(NSLiteralSearch) range:NSMakeRange(0, html.length)];
         [html replaceOccurrencesOfString:@"%ARTICLE_TITLE%" withString:self.post.title options:(NSLiteralSearch) range:NSMakeRange(0, html.length)];
         NSString *body = [NSString stringWithFormat:@"<p style=\"color: #888;\">%@</p>%@", [self.postPreview dateAndAuthor], self.post.body[@"value"]];
         [html replaceOccurrencesOfString:@"%ARTICLE_BODY%" withString:body options:(NSLiteralSearch) range:NSMakeRange(0, html.length)];
