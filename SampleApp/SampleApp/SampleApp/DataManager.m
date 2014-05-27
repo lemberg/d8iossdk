@@ -38,10 +38,13 @@
     bp.page = @(page);
     [bp pullFromServer:^(id result) {
         NSArray *newContent = result;
-        if (newContent.count)
-            [self load:[[NSMutableArray arrayWithArray:content] arrayByAddingObjectsFromArray:newContent] page:page + 1];
-        else
-            [self didLoad:[[NSMutableArray arrayWithArray:content] arrayByAddingObjectsFromArray:newContent]];
+        if ([newContent isKindOfClass:[NSArray class]]) {
+            if (newContent.count)
+                [self load:[[NSMutableArray arrayWithArray:content] arrayByAddingObjectsFromArray:newContent] page:page + 1];
+            else
+                [self didLoad:[[NSMutableArray arrayWithArray:content] arrayByAddingObjectsFromArray:newContent]];
+        } else
+            [self didLoad:@[]];
     }];
 }
 
