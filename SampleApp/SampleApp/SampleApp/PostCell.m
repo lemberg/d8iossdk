@@ -13,6 +13,7 @@
 
 - (void)awakeFromNib {
     self.titleLabel.numberOfLines = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 2 : 3;
+    self.detailLabel.numberOfLines = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 3 : 2;
 }
 
 

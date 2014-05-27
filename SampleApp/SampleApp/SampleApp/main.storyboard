@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Main Controller - Drupal8 SDK-->
+        <!--Main Controller - Drupal8 SDK Demo-->
         <scene sceneID="rUa-A4-n6n">
             <objects>
                 <viewController storyboardIdentifier="MainController" id="nPs-GN-LQx" customClass="MainController" sceneMemberID="viewController">
@@ -64,7 +64,7 @@
                             <constraint firstItem="DHq-OJ-i3X" firstAttribute="top" secondItem="mV2-RC-Hhw" secondAttribute="bottom" id="o77-6w-xdT"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Drupal8 SDK" id="c1h-1q-Oxc"/>
+                    <navigationItem key="navigationItem" title="Drupal8 SDK Demo" id="c1h-1q-Oxc"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="segmentControl" destination="DEp-aQ-bJ6" id="6Or-aq-WAA"/>
@@ -123,7 +123,7 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="215" translatesAutoresizingMaskIntoConstraints="NO" id="3Q6-Ev-6Rf">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="215" translatesAutoresizingMaskIntoConstraints="NO" id="3Q6-Ev-6Rf">
                                                     <rect key="frame" x="0.0" y="43" width="215" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
