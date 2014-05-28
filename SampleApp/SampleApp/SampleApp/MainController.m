@@ -65,7 +65,7 @@
             if (i == 0)
                 postsController.category = nil;
             else if (i == 1)
-                postsController.category = @"Industrial news";
+                postsController.category = @"Industry news";
             else if (i == 2)
                 postsController.category = @"Our posts";
             else if (i == 3)
