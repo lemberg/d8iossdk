@@ -25,7 +25,7 @@
             continue;
         
         Class propClass = [entity classOfProperty:prop];
-        Class itemClass = [entity classByPropertyName:prop];
+        Class itemClass = [entity classOfItems:prop];
         id value = [data objectForKey:prop];
         if ([value isKindOfClass:[NSDictionary class]] && [propClass isSubclassOfClass:[DrupalEntity class]]) {
             value = [DrupalEntityDeserializer deserializeEntityClass:propClass fromData:value];

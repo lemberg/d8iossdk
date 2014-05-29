@@ -18,12 +18,14 @@
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     
     for (NSString *prop in properties) {
+        if ([entity isPropertyTransient:prop])
+            continue;
+        
         SEL propSelector = NSSelectorFromString(prop);
         Class propClass = [entity classOfProperty:prop];
-        Class itemClass = [entity classByPropertyName:prop];
         id value = [entity performSelector:propSelector withObject:nil];
         
-        if (value && [itemClass isSubclassOfClass:[DrupalEntity class]]) {
+        if (value && [propClass isSubclassOfClass:[DrupalEntity class]]) {
             if ([value isKindOfClass:[NSArray class]]) {
                 NSMutableArray *array = [NSMutableArray array];
                 for (DrupalEntity* obj in value)

@@ -23,8 +23,8 @@ typedef void (^EntityActionHandler)(id result);
 - (void)patchServerData:(EntityActionHandler)handler;
 - (void)deleteFromServer:(EntityActionHandler)handler;
 
-- (Class)classByPropertyName:(NSString *)propertyName;
 - (Class)classOfItems:(NSString *)propertyName;
+- (BOOL)isPropertyTransient:(NSString *)propertyName;
 - (NSDictionary *)requestGETParams;
 - (NSDictionary *)toJSONDictionary;
 

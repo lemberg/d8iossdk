@@ -39,11 +39,6 @@
 }
 
 
-- (Class)classByPropertyName:(NSString *)propertyName {
-    return nil;
-}
-
-
 - (Class)classOfItems:(NSString *)propertyName {
     return nil;
 }
@@ -56,6 +51,11 @@
 
 - (NSDictionary *)toJSONDictionary {
     return [DrupalEntitySerializer serializeEntity:self];
+}
+
+
+- (BOOL)isPropertyTransient:(NSString *)propertyName {
+    return NO;
 }
 
 
