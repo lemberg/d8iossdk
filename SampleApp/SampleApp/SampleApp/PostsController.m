@@ -18,25 +18,11 @@
 @interface PostsController ()
 
 @property (nonatomic) NSArray *posts;
-@property (nonatomic) UIRefreshControl *refreshControl;
 
 @end
 
 
 @implementation PostsController
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-
-    UIView *refreshView = [UIView new];
-    [self.tableView insertSubview:refreshView atIndex:0];
-    self.refreshControl = [UIRefreshControl new];
-    [self.refreshControl setTintColor:kLembergPrimaryColor];
-    [self.refreshControl addTarget:self action:@selector(reloadFeeds) forControlEvents:UIControlEventValueChanged];
-    [refreshView addSubview:self.refreshControl];
-}
-
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -91,7 +77,6 @@
 
 - (void)didReload {
     self.posts = [[DataManager manager] postsOfCategory:self.category];
-    [self.refreshControl endRefreshing];
     [self.tableView reloadData];
 }
 

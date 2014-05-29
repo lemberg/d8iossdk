@@ -169,12 +169,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Posts" id="f6H-pB-KIc"/>
-                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="oPs-uX-J5e">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <connections>
-                            <action selector="refresh:" destination="AnZ-hs-4kc" eventType="valueChanged" id="N2a-ga-coK"/>
-                        </connections>
-                    </refreshControl>
                     <connections>
                         <outlet property="view" destination="eFE-oR-ecG" id="U7h-u9-UUn"/>
                     </connections>
