@@ -26,17 +26,20 @@ You can simply call
 Besides of entity api provides few more handy structures:
 ```NSArray``` / ```NSDictionary``` can manage drupal and non-drupal entities, providing them with all DrupalEntity methods like post, push, pull, delete.
 ###3. Object serialization/deserialization
-Library automatically serializes/deserializes objects including attached objects and arrays of objects. Because objective c does not support strongly typed arrays you have to implement method: ```- (Class)classByPropertyName:(NSString *)propertyName;``` and return class of objects of array. If your ```DrupalEntity``` class fetch array of objects with other type, e.g. blog page entity pulls blog posts, you have to implement method: ```- (Class)classOfItems:(NSString *)propertyName;``` and return class of items for deserialization.
+Library automatically serializes/deserializes objects including attached objects and arrays of objects. Because objective c does not support strongly typed arrays you have to implement method: ```- (Class)classOfItems:(NSString *)propertyName``` and return class of objects of array.
 
-###Other details
+###4. Other details
 ####ResponseData
-```DrupalEntity``` object or array of objects (depend on response).
+```DrupalEntity``` object or array of objects (depends on response).
 ####DrupalAPIManager
 Object, containing server base URL and is responsible for server request generation and posting to server. You have to set ```DrupalAPIManager.baseURL``` before making action with DrupalEntity instance.
 ####AFHTTPRequestOperationManager+DrupalLib.h
 Category extends manager of ```AFNetworking``` and is used in DrupalAPIManager. Will be imporoved and extended to support login scheme.
+####Transient fields
 
-###Code samples
+If field should not be serialized or deserialized override method ```- (BOOL)isPropertyTransient:(NSString *)propertyName``` and return YES for needed property name.
+
+###5. Code samples
 ####1. Implement DrupalEntity:
 In order to implement drupal entity you just have to extend ```DrupalEntity``` and implement following methods:
 
