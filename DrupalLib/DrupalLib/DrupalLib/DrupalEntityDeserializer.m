@@ -16,7 +16,7 @@
 + (id)deserializeEntity:(DrupalEntity *)entity fromData:(NSDictionary *)data {    
     NSArray *properties = [entity allProperties];
     for (NSString *prop in data.allKeys) {
-        if ([properties indexOfObject:prop] == NSNotFound)
+        if ([properties indexOfObject:prop] == NSNotFound || [entity isPropertyTransient:prop])
             continue;
         
         NSString *setterName = [NSString stringWithFormat:@"set%@:", [prop stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:[[prop substringToIndex:1] capitalizedString]]];
