@@ -12,7 +12,6 @@
 #import "BlogPostPreview.h"
 #import "DataManager.h"
 #import "PostCell.h"
-#import <DrupalLib/DrupalSDK.h>
 
 
 @interface PostsController ()
@@ -24,7 +23,8 @@
 
 @implementation PostsController
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated
+{
     [super viewWillAppear:animated];
     
     self.posts = [[DataManager manager] postsOfCategory:self.category];
@@ -32,7 +32,8 @@
 }
 
 
-- (void)viewWillDisappear:(BOOL)animated {
+- (void)viewWillDisappear:(BOOL)animated
+{
     [super viewWillDisappear:animated];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self name:kDidLoadPostsNotification object:nil];
@@ -47,7 +48,8 @@
 }
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     static NSString *cellId = @"postCellId";
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     NSAssert(cell, @"no cell prototype");
@@ -64,18 +66,21 @@
 }
 
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [[NSNotificationCenter defaultCenter] postNotificationName:kDidSelectBlopPostNotification object:[self.posts objectAtIndex:indexPath.row] userInfo:nil];
 }
 
 
-- (void)reloadFeeds {
+- (void)reloadFeeds
+{
     [[DataManager manager] loadPosts];
 }
 
 
-- (void)didReload {
+- (void)didReload
+{
     self.posts = [[DataManager manager] postsOfCategory:self.category];
     [self.tableView reloadData];
 }

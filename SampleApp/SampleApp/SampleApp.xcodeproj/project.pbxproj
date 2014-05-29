@@ -184,7 +184,6 @@
 				77A9C358ECD949D63E1F22D3 /* DataManager.h */,
 				77A9CA44AEE0A90623499A49 /* DataManager.m */,
 				9EAE6BE9192E2B50001BECFF /* main.storyboard */,
-				9EAB212B19334F76008F5612 /* template.html */,
 				842C6F221924DB8D0070751B /* Images.xcassets */,
 				842C6F141924DB8C0070751B /* Supporting Files */,
 			);
@@ -194,6 +193,7 @@
 		842C6F141924DB8C0070751B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9EAB212B19334F76008F5612 /* template.html */,
 				842C6F151924DB8C0070751B /* SampleApp-Info.plist */,
 				842C6F161924DB8C0070751B /* InfoPlist.strings */,
 				842C6F191924DB8C0070751B /* main.m */,
@@ -496,6 +496,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleApp/SampleApp-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -515,6 +516,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "Drupal8 SDK";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -524,6 +526,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleApp/SampleApp-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -543,6 +546,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "Drupal8 SDK";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

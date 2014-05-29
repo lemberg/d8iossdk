@@ -12,7 +12,8 @@
 
 @implementation DrupalEntity (Properties)
 
-- (NSArray *)allProperties {
+- (NSArray *)allProperties
+{
     Class class = [self class];    
     NSMutableArray *results = [NSMutableArray array];
     while ([class isSubclassOfClass:[DrupalEntity class]]) {
@@ -30,7 +31,8 @@
 }
 
 
-- (Class)classOfProperty:(NSString *)propertyName {
+- (Class)classOfProperty:(NSString *)propertyName
+{
     // xcdoc://ios//library/prerelease/ios/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtPropertyIntrospection.html
     Class propertyClass = nil;
     objc_property_t property = class_getProperty([self class], [propertyName UTF8String]);

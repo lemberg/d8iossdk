@@ -8,10 +8,10 @@
 
 #define kDidLoadPostsNotification           @"DidLoadPostsNotification"
 
+
 @interface DataManager : NSObject
 
 + (instancetype)manager;
-
 - (void)loadPosts;
 - (NSArray *)posts;
 - (NSArray *)postsOfCategory:(NSString *)category;

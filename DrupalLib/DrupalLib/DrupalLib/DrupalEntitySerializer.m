@@ -13,7 +13,8 @@
 
 @implementation DrupalEntitySerializer
 
-+ (NSDictionary *)serializeEntity:(DrupalEntity *)entity {
++ (NSDictionary *)serializeEntity:(DrupalEntity *)entity
+{
     NSArray *properties = [entity allProperties];
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     
@@ -51,8 +52,7 @@
         
         if (value)
             [dict setObject:value forKey:prop];
-    }
-    
+    }    
     return [NSDictionary dictionaryWithDictionary:dict];
 }
 

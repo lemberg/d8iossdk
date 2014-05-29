@@ -16,7 +16,8 @@ static DrupalAPIManager *sharedDrupalAPIManager;
 
 @implementation DrupalAPIManager
 
-+ (DrupalAPIManager*)sharedDrupalAPIManager {
++ (DrupalAPIManager*)sharedDrupalAPIManager
+{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedDrupalAPIManager = [DrupalAPIManager new];
@@ -25,7 +26,8 @@ static DrupalAPIManager *sharedDrupalAPIManager;
 }
 
 
-- (void)postEntity:(DrupalEntity*)entity completeHandler:(CompleteHandler)block {
+- (void)postEntity:(DrupalEntity*)entity completeHandler:(CompleteHandler)block
+{
     [[AFHTTPRequestOperationManager defaultManager] POST:[self pathForEntity:entity]
                                               parameters:[entity toJSONDictionary]
                                                  success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -37,7 +39,8 @@ static DrupalAPIManager *sharedDrupalAPIManager;
 }
 
 
-- (void)getEntity:(DrupalEntity*)entity completeHandler:(CompleteHandler)block {
+- (void)getEntity:(DrupalEntity*)entity completeHandler:(CompleteHandler)block
+{
     [[AFHTTPRequestOperationManager defaultManager] GET:[self pathForEntity:entity]
                                              parameters:[entity requestGETParams]
                                                 success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -57,7 +60,8 @@ static DrupalAPIManager *sharedDrupalAPIManager;
 }
 
 
-- (NSString*)pathForEntity:(DrupalEntity*)entity{
+- (NSString*)pathForEntity:(DrupalEntity*)entity
+{
     NSString* fullPath = [[self.baseURL absoluteString]stringByAppendingPathComponent: entity.path];
     return fullPath;
 }

@@ -13,7 +13,8 @@
 
 @implementation DrupalEntityDeserializer
 
-+ (id)deserializeEntity:(DrupalEntity *)entity fromData:(NSDictionary *)data {    
++ (id)deserializeEntity:(DrupalEntity *)entity fromData:(NSDictionary *)data
+{
     NSArray *properties = [entity allProperties];
     for (NSString *prop in data.allKeys) {
         if ([properties indexOfObject:prop] == NSNotFound || [entity isPropertyTransient:prop])
@@ -53,7 +54,8 @@
 }
 
 
-+ (id)deserializeEntities:(DrupalEntity *)entity fromData:(NSArray *)data {
++ (id)deserializeEntities:(DrupalEntity *)entity fromData:(NSArray *)data
+{
     Class class = [entity classOfItems:nil] ? [entity classOfItems:nil] : [entity class];
     NSMutableArray *array = [NSMutableArray array];
     for (NSDictionary *d in data)
@@ -62,12 +64,14 @@
 }
 
 
-+ (id)deserializeEntityClass:(Class)entityClass fromData:(NSDictionary *)data {
++ (id)deserializeEntityClass:(Class)entityClass fromData:(NSDictionary *)data
+{
     return [DrupalEntityDeserializer deserializeEntity:[entityClass new] fromData:data];
 }
 
 
-+ (id)deserializeEntitiesClass:(Class)entityClass fromData:(NSArray *)data {
++ (id)deserializeEntitiesClass:(Class)entityClass fromData:(NSArray *)data
+{
     NSMutableArray *array = [NSMutableArray array];
     for (NSDictionary *d in data)
         [array addObject:[DrupalEntityDeserializer deserializeEntity:[entityClass new] fromData:d]];

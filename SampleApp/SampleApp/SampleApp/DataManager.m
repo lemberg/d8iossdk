@@ -25,7 +25,8 @@
 }
 
 
-- (void)loadPosts {
+- (void)loadPosts
+{
     if (isLoading || page == -1)
         return;
     
@@ -37,8 +38,9 @@
 }
 
 
-- (void)load:(NSArray *)content {
-    NSLog(@"load posts %d", page);
+//  Load next page
+- (void)load:(NSArray *)content
+{
     BlogPage *bp = [BlogPage new];
     bp.page = @(page);
     [bp pullFromServer:^(NSArray *result) {
@@ -52,7 +54,8 @@
 }
 
 
-- (void)didLoad:(NSArray *)content {
+- (void)didLoad:(NSArray *)content
+{
     posts = content;
     isLoading = NO;
     [[NSNotificationCenter defaultCenter] postNotificationName:kDidLoadPostsNotification object:nil];
@@ -64,14 +67,15 @@
 }
 
 
-- (NSArray *)postsOfCategory:(NSString *)category {
+- (NSArray *)postsOfCategory:(NSString *)category
+{
     if (!category)
         return posts;
+    
     NSMutableArray *array = [NSMutableArray array];
-    for (BlogPost *bp in posts) {
+    for (BlogPost *bp in posts)
         if ([bp.field_blog_category isEqualToString:category])
             [array addObject:bp];
-    }
     return array;
 }
 

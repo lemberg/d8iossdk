@@ -13,7 +13,9 @@
 
 @implementation DrupalEntity
 
-- (void)pullFromServer:(EntityActionHandler)handler {
+//  GET object from server
+- (void)pullFromServer:(EntityActionHandler)handler
+{
     [[DrupalAPIManager sharedDrupalAPIManager] getEntity:self completeHandler:^(id object, NSError *error) {
         if (handler)
             return error ? handler(nil) : handler(object);
@@ -21,7 +23,9 @@
 }
 
 
-- (void)pushToServer:(EntityActionHandler)handler {
+//  POST object to server
+- (void)pushToServer:(EntityActionHandler)handler
+{
     [[DrupalAPIManager sharedDrupalAPIManager] postEntity:self completeHandler:^(id object, NSError *error) {
         if (handler)
             return error ? handler(nil) : handler(object);
@@ -29,32 +33,44 @@
 }
 
 
-- (void)patchServerData:(EntityActionHandler)handler {
+//  PATCH object on server
+- (void)patchServerData:(EntityActionHandler)handler
+{
     //  TODO: implement patching object on server    
 }
 
 
-- (void)deleteFromServer:(EntityActionHandler)handler {
+//  DELETE object from server
+- (void)deleteFromServer:(EntityActionHandler)handler
+{
     //  TODO: implement deleting object from server
 }
 
 
-- (Class)classOfItems:(NSString *)propertyName {
+//  Return class of objects into array. Is called only if property type is NSArray.
+- (Class)classOfItems:(NSString *)propertyName
+{
     return nil;
 }
 
 
-- (NSDictionary *)requestGETParams {
+//  Return GET params
+- (NSDictionary *)requestGETParams
+{
     return nil;
 }
 
 
-- (NSDictionary *)toJSONDictionary {
+//  Override this method to customize serialization
+- (NSDictionary *)toJSONDictionary
+{
     return [DrupalEntitySerializer serializeEntity:self];
 }
 
 
-- (BOOL)isPropertyTransient:(NSString *)propertyName {
+//  Return YES for transient properties.
+- (BOOL)isPropertyTransient:(NSString *)propertyName
+{
     return NO;
 }
 

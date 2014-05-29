@@ -11,10 +11,12 @@
 
 @implementation AFHTTPRequestOperationManager (DrupalLib)
 
-+ (instancetype)defaultManager {
++ (instancetype)defaultManager
+{
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [[manager requestSerializer] setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     return manager;
 }
+
 
 @end

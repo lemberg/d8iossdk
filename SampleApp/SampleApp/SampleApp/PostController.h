@@ -11,6 +11,7 @@
 
 @class BlogPostPreview;
 
+
 @interface PostController : UIViewController
 
 @property (nonatomic) BlogPostPreview *postPreview;

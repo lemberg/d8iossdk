@@ -14,9 +14,9 @@
 
 @interface MainController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
-@property (strong, nonatomic) IBOutlet UISegmentedControl *segmentControl;
 @property (nonatomic) UIPageViewController *pageController;
 @property (nonatomic) NSMutableArray *controllers;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *segmentControl;
 
 - (IBAction)changeCategory:(UISegmentedControl *)sender;
 
@@ -33,21 +33,24 @@
 }
 
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated
+{
     [super viewWillAppear:animated];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(openBlogPost:) name:kDidSelectBlopPostNotification object:nil];
 }
 
 
-- (void)viewWillDisappear:(BOOL)animated {
+- (void)viewWillDisappear:(BOOL)animated
+{
     [super viewWillDisappear:animated];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self name:kDidSelectBlopPostNotification object:nil];
 }
 
 
-- (void)openBlogPost:(NSNotification *)n {
+- (void)openBlogPost:(NSNotification *)n
+{
     PostController *pc = [self.storyboard instantiateViewControllerWithIdentifier:@"PostController"];
     pc.postPreview = n.object;
     [self.navigationController pushViewController:pc animated:YES];
@@ -101,14 +104,18 @@
 - (void)pageViewController:(UIPageViewController *)pageViewController
         didFinishAnimating:(BOOL)finished
    previousViewControllers:(NSArray *)previousViewControllers
-       transitionCompleted:(BOOL)completed {
+       transitionCompleted:(BOOL)completed
+{
     NSInteger index = [self.controllers indexOfObject:[self.pageController.viewControllers firstObject]];
     [self.segmentControl setSelectedSegmentIndex:index];
 }
 
 
-- (IBAction)changeCategory:(UISegmentedControl *)sender {
-    [self.pageController setViewControllers:@[[self.controllers objectAtIndex:sender.selectedSegmentIndex]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+- (IBAction)changeCategory:(UISegmentedControl *)sender
+{
+    [self.pageController setViewControllers:@[[self.controllers objectAtIndex:sender.selectedSegmentIndex]]
+                                  direction:UIPageViewControllerNavigationDirectionForward
+                                   animated:YES completion:nil];
 }
 
 
