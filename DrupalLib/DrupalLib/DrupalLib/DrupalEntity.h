@@ -26,5 +26,6 @@ typedef void (^EntityActionHandler)(id result);
 - (Class)classByPropertyName:(NSString *)propertyName;
 - (Class)classOfItems:(NSString *)propertyName;
 - (NSDictionary *)requestGETParams;
+- (NSDictionary *)toJSONDictionary;
 
 @end

@@ -8,7 +8,6 @@
 
 #import "DrupalAPIManager.h"
 #import "DrupalEntityDeserializer.h"
-#import "DrupalEntitySerializer.h"
 #import "AFHTTPRequestOperationManager+DrupalLib.h"
 
 
@@ -17,47 +16,45 @@ static DrupalAPIManager *sharedDrupalAPIManager;
 
 @implementation DrupalAPIManager
 
-+ (DrupalAPIManager*)sharedDrupalAPIManager{
++ (DrupalAPIManager*)sharedDrupalAPIManager {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedDrupalAPIManager = [[DrupalAPIManager alloc] init];
+        sharedDrupalAPIManager = [DrupalAPIManager new];
     });
     return sharedDrupalAPIManager;
 }
 
 
-- (void)postEntity:(DrupalEntity*)entity{
-    NSString* fullPath = [self pathForEntity:entity];
-    [[AFHTTPRequestOperationManager defaultManager] POST:fullPath
-       parameters:[DrupalEntitySerializer serializeEntity:entity]
-          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-              NSLog(@"%@",[DrupalEntitySerializer serializeEntity: entity]);
-          }
-          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-              NSLog(@"postEntity error:%@",error.description);
-          }];
+- (void)postEntity:(DrupalEntity*)entity completeHandler:(CompleteHandler)block {
+    [[AFHTTPRequestOperationManager defaultManager] POST:[self pathForEntity:entity]
+                                              parameters:[entity toJSONDictionary]
+                                                 success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                                     NSLog(@"%@", [DrupalEntityDeserializer deserializeEntity:entity fromData:responseObject]);
+                                                 }
+                                                 failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                                     NSLog(@"postEntity error:%@", error.description);
+                                                 }];
 }
 
 
-- (void)getEntity:(DrupalEntity*)entity completeHandler:(CompleteHandler)block{
-    NSString* fullPath = [self pathForEntity:entity];
-    [[AFHTTPRequestOperationManager defaultManager] GET:fullPath
-      parameters:[entity requestGETParams]
-         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             id result;
-             if ([responseObject isKindOfClass:[NSArray class]])
-                 result = [DrupalEntityDeserializer deserializeEntities:entity fromData:responseObject];
-             else if ([responseObject isKindOfClass:[NSDictionary class]])
-                 result = [DrupalEntityDeserializer deserializeEntity:entity fromData: (NSDictionary *)responseObject];
-             if (block)
-                 block(result, nil);
-             NSLog(@"%@", result);
-         }
-         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             NSLog(@"getEntity error:%@",error.description);
-             if (block)
-                 block(nil, error);
-         }];
+- (void)getEntity:(DrupalEntity*)entity completeHandler:(CompleteHandler)block {
+    [[AFHTTPRequestOperationManager defaultManager] GET:[self pathForEntity:entity]
+                                             parameters:[entity requestGETParams]
+                                                success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                                    NSLog(@"%@", responseObject);
+                                                    id result;
+                                                    if ([responseObject isKindOfClass:[NSArray class]])             //  Server returned an array of objects.
+                                                        result = [DrupalEntityDeserializer deserializeEntities:entity fromData:responseObject];
+                                                    else if ([responseObject isKindOfClass:[NSDictionary class]])   //  Server returned a single object. Update the entity.
+                                                        result = [DrupalEntityDeserializer deserializeEntity:entity fromData:(NSDictionary *)responseObject];
+                                                    if (block)
+                                                        block(result, nil);
+                                                }
+                                                failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                                    NSLog(@"getEntity error:%@",error.description);
+                                                    if (block)
+                                                        block(nil, error);
+                                                }];
 }
 
 

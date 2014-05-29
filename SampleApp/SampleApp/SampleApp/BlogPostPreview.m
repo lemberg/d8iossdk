@@ -12,7 +12,8 @@
 @implementation BlogPostPreview
 
 - (NSString *)dateAndAuthor {
-    return [NSString stringWithFormat:@"%@ %@", self.field_blog_date, ([self.field_blog_author isKindOfClass:[NSNull class]] || [self.field_blog_author isEqualToString:@""]) ? @"" : [@"by " stringByAppendingString:self.field_blog_author]];
+    return [NSString stringWithFormat:@"%@ %@", self.field_blog_date, [self.field_blog_author isEqualToString:@""] ? @"" : [@"by " stringByAppendingString:self.field_blog_author]];
 }
+
 
 @end

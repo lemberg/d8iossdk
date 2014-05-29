@@ -18,9 +18,8 @@ typedef void (^CompleteHandler)(id response, NSError *error);
 @property NSURL *baseURL;
 
 + (DrupalAPIManager*) sharedDrupalAPIManager;
-
-- (void)postEntity:(DrupalEntity*)entity;
 - (void)getEntity:(DrupalEntity*)entity completeHandler:(CompleteHandler)block;
+- (void)postEntity:(DrupalEntity*)entity completeHandler:(CompleteHandler)block;
 - (NSString*)pathForEntity:(DrupalEntity*)entity;
 
 @end

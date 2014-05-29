@@ -11,6 +11,7 @@
 
 @class DrupalEntity;
 
+
 @interface DrupalEntitySerializer : NSObject
 
 + (NSDictionary *)serializeEntity:(DrupalEntity *)entity;

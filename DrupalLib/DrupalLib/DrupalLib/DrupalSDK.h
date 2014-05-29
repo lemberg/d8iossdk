@@ -10,5 +10,7 @@
 #define DrupalLib_DrupalSDK_h
 
 #import "DrupalEntity.h"
+#import "AFNetworking.h"
+#import "UIKit+AFNetworking.h"
 
 #endif

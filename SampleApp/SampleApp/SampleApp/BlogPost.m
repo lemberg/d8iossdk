@@ -7,7 +7,6 @@
 //
 
 #import "BlogPost.h"
-#import "FieldBlogImage.h"
 
 
 @implementation BlogPost

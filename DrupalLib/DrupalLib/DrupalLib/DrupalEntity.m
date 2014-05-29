@@ -7,21 +7,25 @@
 //
 
 #import "DrupalEntity.h"
+#import "DrupalEntitySerializer.h"
 #import "DrupalAPIManager.h"
 
 
 @implementation DrupalEntity
 
 - (void)pullFromServer:(EntityActionHandler)handler {
-    [[DrupalAPIManager sharedDrupalAPIManager] getEntity:self completeHandler:^(id response, NSError *error) {
+    [[DrupalAPIManager sharedDrupalAPIManager] getEntity:self completeHandler:^(id object, NSError *error) {
         if (handler)
-            return error ? handler(self) : handler(response);
+            return error ? handler(nil) : handler(object);
     }];
 }
 
 
 - (void)pushToServer:(EntityActionHandler)handler {
-    [[DrupalAPIManager sharedDrupalAPIManager] postEntity:self];
+    [[DrupalAPIManager sharedDrupalAPIManager] postEntity:self completeHandler:^(id object, NSError *error) {
+        if (handler)
+            return error ? handler(nil) : handler(object);
+    }];
 }
 
 
@@ -47,6 +51,11 @@
 
 - (NSDictionary *)requestGETParams {
     return nil;
+}
+
+
+- (NSDictionary *)toJSONDictionary {
+    return [DrupalEntitySerializer serializeEntity:self];
 }
 
 

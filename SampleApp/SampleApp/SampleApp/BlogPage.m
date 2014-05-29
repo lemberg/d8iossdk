@@ -26,4 +26,5 @@
     return [BlogPostPreview class];
 }
 
+
 @end

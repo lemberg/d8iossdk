@@ -13,7 +13,7 @@
 
 @implementation DrupalEntityDeserializer
 
-+ (id)deserializeEntity:(DrupalEntity *)entity fromData:(NSDictionary *)data {
++ (id)deserializeEntity:(DrupalEntity *)entity fromData:(NSDictionary *)data {    
     NSArray *properties = [entity allProperties];
     for (NSString *prop in data.allKeys) {
         if ([properties indexOfObject:prop] == NSNotFound)
@@ -35,8 +35,8 @@
                 for (NSDictionary *d in value)
                     [obj addObject:[DrupalEntityDeserializer deserializeEntityClass:itemClass fromData:d]];
                 value = obj;
-            } else if ([itemClass isSubclassOfClass:[DrupalEntity class]] && [propClass isSubclassOfClass:[DrupalEntity class]]) {
-                value = [DrupalEntityDeserializer deserializeEntityClass:itemClass fromData:[value firstObject]];
+            } else if ([propClass isSubclassOfClass:[DrupalEntity class]]) {
+                value = [DrupalEntityDeserializer deserializeEntityClass:propClass fromData:[value firstObject]];
             } else if ([propClass isSubclassOfClass:[NSDictionary class]]) {
                 value = [value firstObject]; 
             } else if (![propClass isSubclassOfClass:[NSArray class]]) {

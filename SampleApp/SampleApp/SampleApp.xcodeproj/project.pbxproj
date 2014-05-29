@@ -33,7 +33,6 @@
 		9EAE6BF1192E2F2A001BECFF /* PostController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAE6BF0192E2F2A001BECFF /* PostController.m */; };
 		9EB2B020192B909E00F06C99 /* BlogPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB2B01F192B909E00F06C99 /* BlogPost.m */; };
 		9EB2B024192B912100F06C99 /* BlogPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB2B023192B912100F06C99 /* BlogPage.m */; };
-		A8AC6737192A54C000AE8CD8 /* FieldBlogImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AC6736192A54C000AE8CD8 /* FieldBlogImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,8 +104,6 @@
 		9EB2B01F192B909E00F06C99 /* BlogPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogPost.m; sourceTree = "<group>"; };
 		9EB2B022192B912100F06C99 /* BlogPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogPage.h; sourceTree = "<group>"; };
 		9EB2B023192B912100F06C99 /* BlogPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogPage.m; sourceTree = "<group>"; };
-		A8AC6735192A54C000AE8CD8 /* FieldBlogImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldBlogImage.h; sourceTree = "<group>"; };
-		A8AC6736192A54C000AE8CD8 /* FieldBlogImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldBlogImage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,8 +232,6 @@
 		A8AC6730192A4E6600AE8CD8 /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
-				A8AC6735192A54C000AE8CD8 /* FieldBlogImage.h */,
-				A8AC6736192A54C000AE8CD8 /* FieldBlogImage.m */,
 				9EB2B01E192B909E00F06C99 /* BlogPost.h */,
 				9EB2B01F192B909E00F06C99 /* BlogPost.m */,
 				9EAB212D193366EC008F5612 /* BlogPostPreview.h */,
@@ -373,7 +368,6 @@
 				9E2B07E5192F621D00F445B6 /* MainController.m in Sources */,
 				9EB2B020192B909E00F06C99 /* BlogPost.m in Sources */,
 				9EB2B024192B912100F06C99 /* BlogPage.m in Sources */,
-				A8AC6737192A54C000AE8CD8 /* FieldBlogImage.m in Sources */,
 				842C6F1E1924DB8C0070751B /* AppDelegate.m in Sources */,
 				9EAE6BEE192E2DC6001BECFF /* PostsController.m in Sources */,
 				842C6F1A1924DB8C0070751B /* main.m in Sources */,

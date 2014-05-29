@@ -60,7 +60,7 @@
 {
     if ([segue.identifier isEqualToString:@"loadPageController"]) {
         self.controllers = [NSMutableArray array];
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 4; i++) {           //  Create categories of posts
             PostsController *postsController = [self.storyboard instantiateViewControllerWithIdentifier:@"PostsController"];
             if (i == 0)
                 postsController.category = nil;

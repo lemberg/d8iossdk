@@ -12,6 +12,7 @@
 #import "BlogPostPreview.h"
 #import "DataManager.h"
 #import "PostCell.h"
+#import <DrupalLib/DrupalSDK.h>
 
 
 @interface PostsController ()
@@ -69,14 +70,7 @@
     cell.titleLabel.text = bp.title;
     cell.dateLabel.text = [bp dateAndAuthor];
     cell.detailLabel.text = bp.body;
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSURL *url = [NSURL URLWithString:bp.field_file];
-        NSData *data = [NSData dataWithContentsOfURL:url];
-        UIImage *image = [UIImage imageWithData:data];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [cell.postImageView setImage:image];
-        });
-    });
+    [cell.postImageView setImageWithURL:[NSURL URLWithString:bp.field_file]];
     return cell;
 }
 

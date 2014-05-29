@@ -36,7 +36,10 @@
         
         NSString *path = [[NSBundle mainBundle] pathForResource:@"template" ofType:@"html"];
         NSMutableString *html = [NSMutableString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-        [html replaceOccurrencesOfString:@"%ARTICLE_IMAGE_URL%" withString:self.postPreview.field_file options:(NSLiteralSearch) range:NSMakeRange(0, html.length)];
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+            [html replaceOccurrencesOfString:@"%ARTICLE_IMAGE_URL%" withString:self.postPreview.field_file options:(NSLiteralSearch) range:NSMakeRange(0, html.length)];
+        else
+            [html replaceOccurrencesOfString:@"%ARTICLE_IMAGE_URL%" withString:@"" options:(NSLiteralSearch) range:NSMakeRange(0, html.length)];
         [html replaceOccurrencesOfString:@"%ARTICLE_TITLE%" withString:self.post.title options:(NSLiteralSearch) range:NSMakeRange(0, html.length)];
         NSString *body = [NSString stringWithFormat:@"<p style=\"color: #888;\">%@</p>%@", [self.postPreview dateAndAuthor], self.post.body[@"value"]];
         [html replaceOccurrencesOfString:@"%ARTICLE_BODY%" withString:body options:(NSLiteralSearch) range:NSMakeRange(0, html.length)];
@@ -48,7 +51,8 @@
 }
 
 
-- (void)share {
+- (void)share
+{
     if (isActionSheetOpen)
         return;
     isActionSheetOpen = YES;
@@ -58,31 +62,35 @@
 
 #pragma mark - UIWebViewDelegate
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
     [self.activityIndicator stopAnimating];
 }
 
 
 #pragma mark - UIActionSheetDelegate
 
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
     if (buttonIndex == 0) {
         //  Facebook
-        if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
-        {
+        if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
             SLComposeViewController *postSheet = [SLComposeViewController
                                                    composeViewControllerForServiceType:SLServiceTypeFacebook];
-            [postSheet setInitialText:@"Hello a Facebook"];
+            [postSheet setInitialText:[NSString stringWithFormat:@"%@ %@", self.post.title, self.post.field_blog_url[@"url"]]];
             [self presentViewController:postSheet animated:YES completion:nil];
+        } else {           
+            [[[UIAlertView alloc] initWithTitle:@"" message:@"Sharing through Twitter is not available!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         }
     } else if (buttonIndex == 1) {
         // Twitter
-        if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
-        {
+        if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
             SLComposeViewController *tweetSheet = [SLComposeViewController
                                                    composeViewControllerForServiceType:SLServiceTypeTwitter];
-            [tweetSheet setInitialText:@"Hello a Tweet"];
+            [tweetSheet setInitialText:[NSString stringWithFormat:@"%@ %@", self.post.title, self.post.field_blog_url[@"url"]]];
             [self presentViewController:tweetSheet animated:YES completion:nil];
+        } else {
+            [[[UIAlertView alloc] initWithTitle:@"" message:@"Sharing through Twitter is not available!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         }
     }
     isActionSheetOpen = NO;

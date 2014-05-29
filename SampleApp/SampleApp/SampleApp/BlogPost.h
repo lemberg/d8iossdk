@@ -34,5 +34,6 @@
 @property (nonatomic) NSString *field_blog_category;
 @property (nonatomic) NSString *field_blog_image;
 @property (nonatomic) NSString *field_file;
+@property (nonatomic) NSDictionary *field_blog_url;
 
 @end
