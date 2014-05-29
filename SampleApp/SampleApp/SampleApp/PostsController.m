@@ -70,7 +70,10 @@
     cell.titleLabel.text = bp.title;
     cell.dateLabel.text = [bp dateAndAuthor];
     cell.detailLabel.text = bp.body;
+    cell.postImageView.image = nil;
     [cell.postImageView setImageWithURL:[NSURL URLWithString:bp.field_file]];
+    if (indexPath.row == self.posts.count - 1)
+        [[DataManager manager] loadPosts];
     return cell;
 }
 

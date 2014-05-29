@@ -41,7 +41,6 @@ static DrupalAPIManager *sharedDrupalAPIManager;
     [[AFHTTPRequestOperationManager defaultManager] GET:[self pathForEntity:entity]
                                              parameters:[entity requestGETParams]
                                                 success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                                    NSLog(@"%@", responseObject);
                                                     id result;
                                                     if ([responseObject isKindOfClass:[NSArray class]])             //  Server returned an array of objects.
                                                         result = [DrupalEntityDeserializer deserializeEntities:entity fromData:responseObject];

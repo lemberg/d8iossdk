@@ -10,6 +10,7 @@
 
 @implementation DataManager {
     NSArray *posts;
+    NSInteger page;
     BOOL isLoading;
 }
 
@@ -25,23 +26,28 @@
 
 
 - (void)loadPosts {
-    if (isLoading)
+    if (isLoading || page == -1)
         return;
     
+    if (!posts)
+        posts = [NSArray array];
+    
     isLoading = YES;
-    [self load:[NSArray array] page:0];
+    [self load:posts];
 }
 
 
-- (void)load:(NSArray *)content page:(NSInteger)page {
+- (void)load:(NSArray *)content {
+    NSLog(@"load posts %d", page);
     BlogPage *bp = [BlogPage new];
     bp.page = @(page);
-    [bp pullFromServer:^(id result) {
-        NSArray *newContent = result;
-        if (newContent.count)
-            [self load:[[NSMutableArray arrayWithArray:content] arrayByAddingObjectsFromArray:newContent] page:page + 1];
-        else
-            [self didLoad:[[NSMutableArray arrayWithArray:content] arrayByAddingObjectsFromArray:newContent]];
+    [bp pullFromServer:^(NSArray *result) {
+        if (result) {
+            [self didLoad:[[NSMutableArray arrayWithArray:content] arrayByAddingObjectsFromArray:result]];
+            page = result.count ? page + 1 : -1;        //  -1 - all content is downloaded
+        } else {
+            [self didLoad:content];
+        }
     }];
 }
 
