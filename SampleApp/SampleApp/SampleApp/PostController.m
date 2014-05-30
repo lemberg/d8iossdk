@@ -80,7 +80,7 @@
             [postSheet setInitialText:[NSString stringWithFormat:@"%@ %@", self.post.title, self.post.field_blog_url[@"url"]]];
             [self presentViewController:postSheet animated:YES completion:nil];
         } else {           
-            [[[UIAlertView alloc] initWithTitle:@"" message:@"Sharing through Twitter is not available!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+            [[[UIAlertView alloc] initWithTitle:@"" message:@"Sharing through Facebook is not available!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         }
     } else if (buttonIndex == 1) {
         // Twitter

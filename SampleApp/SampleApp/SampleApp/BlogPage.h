@@ -6,9 +6,6 @@
 //  Copyright (c) 2014 ls. All rights reserved.
 //
 
-#import <DrupalLib/DrupalEntity.h>
-
-
 @interface BlogPage : DrupalEntity
 
 @property (nonatomic) NSNumber *page;
