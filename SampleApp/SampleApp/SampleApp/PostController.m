@@ -32,6 +32,11 @@
     BlogPost *post = [BlogPost new];
     post.nid = self.postPreview.nid;
     [post pullFromServer:^(id result) {
+        if (!result) {
+            [[[UIAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"Could not load post \"%@\"", self.postPreview.title] delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil] show];
+            [self.activityIndicator stopAnimating];
+            return;
+        }
         self.post = result;
         
         NSString *path = [[NSBundle mainBundle] pathForResource:@"template" ofType:@"html"];
