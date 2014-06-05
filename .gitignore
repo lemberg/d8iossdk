@@ -9,3 +9,13 @@ private/
 # Xcode
 xcuserdata/
 .idea/
+
+# CocoaPods
+Pods
+DrupalLib.xcodeproj/xcshareddata/
+DrupalLib.xcworkspace/xcshareddata/xcschemes/
+DerivedData
+
+# Bundler binstubs
+.bundle
+bin

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4E97E278-7F51-4368-ABEA-DCE126DD6CD7</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DrupalLib</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6A4ECD56-CA8A-4713-976E-FD0BB549651D</key>
+		<string>ssh://codebasehq.com/lemberg/drupal-8-iosandroid-sdk/ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DrupalLib.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6A4ECD56-CA8A-4713-976E-FD0BB549651D</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://codebasehq.com/lemberg/drupal-8-iosandroid-sdk/ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6A4ECD56-CA8A-4713-976E-FD0BB549651D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6A4ECD56-CA8A-4713-976E-FD0BB549651D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DrupalSDK</string>
+		</dict>
+	</array>
+</dict>
+</plist>
