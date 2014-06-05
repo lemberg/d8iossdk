@@ -22,7 +22,6 @@
 		842C6F2D1924DB8D0070751B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842C6F111924DB8C0070751B /* CoreData.framework */; };
 		842C6F351924DB8D0070751B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 842C6F331924DB8D0070751B /* InfoPlist.strings */; };
 		842C6F371924DB8D0070751B /* SampleAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 842C6F361924DB8D0070751B /* SampleAppTests.m */; };
-		84FF7D03192635A50003D710 /* libDrupalLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FF7CFA192631330003D710 /* libDrupalLib.a */; };
 		9E2B07E5192F621D00F445B6 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2B07E4192F621D00F445B6 /* MainController.m */; };
 		9E2B07EC192F8FA600F445B6 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2B07EB192F8FA600F445B6 /* PostCell.m */; };
 		9E2B07EE192F930200F445B6 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2B07ED192F930200F445B6 /* Social.framework */; };
@@ -33,6 +32,7 @@
 		9EAE6BF1192E2F2A001BECFF /* PostController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAE6BF0192E2F2A001BECFF /* PostController.m */; };
 		9EB2B020192B909E00F06C99 /* BlogPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB2B01F192B909E00F06C99 /* BlogPost.m */; };
 		9EB2B024192B912100F06C99 /* BlogPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB2B023192B912100F06C99 /* BlogPage.m */; };
+		A3DD32C9EBDB4A428D0281E5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 693A468231CC4CAA895E85F8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,30 +43,11 @@
 			remoteGlobalIDString = 842C6F071924DB8C0070751B;
 			remoteInfo = SampleApp;
 		};
-		84FF7CF9192631330003D710 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 84FF7CF4192631330003D710 /* DrupalLib.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 842C6ED41924DAAC0070751B;
-			remoteInfo = DrupalLib;
-		};
-		84FF7CFB192631330003D710 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 84FF7CF4192631330003D710 /* DrupalLib.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 842C6EE41924DAAC0070751B;
-			remoteInfo = DrupalLibTests;
-		};
-		84FF7CFE192631DE0003D710 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 84FF7CF4192631330003D710 /* DrupalLib.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 842C6ED31924DAAC0070751B;
-			remoteInfo = DrupalLib;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0DB61D8069F0437FBD223CEB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		693A468231CC4CAA895E85F8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		77A9C358ECD949D63E1F22D3 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		77A9CA44AEE0A90623499A49 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 		842C6F081924DB8C0070751B /* Drupal8 SDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Drupal8 SDK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,7 +67,6 @@
 		842C6F321924DB8D0070751B /* SampleAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SampleAppTests-Info.plist"; sourceTree = "<group>"; };
 		842C6F341924DB8D0070751B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		842C6F361924DB8D0070751B /* SampleAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleAppTests.m; sourceTree = "<group>"; };
-		84FF7CF4192631330003D710 /* DrupalLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DrupalLib.xcodeproj; path = ../../DrupalLib/DrupalLib/DrupalLib.xcodeproj; sourceTree = "<group>"; };
 		9E2B07E1192F5ED800F445B6 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
 		9E2B07E4192F621D00F445B6 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
 		9E2B07EA192F8FA600F445B6 /* PostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
@@ -112,11 +92,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E2B07EE192F930200F445B6 /* Social.framework in Frameworks */,
-				84FF7D03192635A50003D710 /* libDrupalLib.a in Frameworks */,
 				842C6F0E1924DB8C0070751B /* CoreGraphics.framework in Frameworks */,
 				842C6F121924DB8C0070751B /* CoreData.framework in Frameworks */,
 				842C6F101924DB8C0070751B /* UIKit.framework in Frameworks */,
 				842C6F0C1924DB8C0070751B /* Foundation.framework in Frameworks */,
+				A3DD32C9EBDB4A428D0281E5 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,11 +117,11 @@
 		842C6EFF1924DB8C0070751B = {
 			isa = PBXGroup;
 			children = (
-				84FF7CF4192631330003D710 /* DrupalLib.xcodeproj */,
 				842C6F131924DB8C0070751B /* SampleApp */,
 				842C6F301924DB8D0070751B /* SampleAppTests */,
 				842C6F0A1924DB8C0070751B /* Frameworks */,
 				842C6F091924DB8C0070751B /* Products */,
+				0DB61D8069F0437FBD223CEB /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,6 +143,7 @@
 				842C6F0F1924DB8C0070751B /* UIKit.framework */,
 				842C6F111924DB8C0070751B /* CoreData.framework */,
 				842C6F291924DB8D0070751B /* XCTest.framework */,
+				693A468231CC4CAA895E85F8 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -220,15 +201,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		84FF7CF5192631330003D710 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				84FF7CFA192631330003D710 /* libDrupalLib.a */,
-				84FF7CFC192631330003D710 /* DrupalLibTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		A8AC6730192A4E6600AE8CD8 /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,14 +221,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 842C6F3A1924DB8D0070751B /* Build configuration list for PBXNativeTarget "SampleApp" */;
 			buildPhases = (
+				58594AE4C5ED4C598581EACD /* Check Pods Manifest.lock */,
 				842C6F041924DB8C0070751B /* Sources */,
 				842C6F051924DB8C0070751B /* Frameworks */,
 				842C6F061924DB8C0070751B /* Resources */,
+				8E469D35398C4018B4C4841E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				84FF7CFF192631DE0003D710 /* PBXTargetDependency */,
 			);
 			name = SampleApp;
 			productName = SampleApp;
@@ -305,12 +278,6 @@
 			mainGroup = 842C6EFF1924DB8C0070751B;
 			productRefGroup = 842C6F091924DB8C0070751B /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 84FF7CF5192631330003D710 /* Products */;
-					ProjectRef = 84FF7CF4192631330003D710 /* DrupalLib.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				842C6F071924DB8C0070751B /* SampleApp */,
@@ -318,23 +285,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		84FF7CFA192631330003D710 /* libDrupalLib.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libDrupalLib.a;
-			remoteRef = 84FF7CF9192631330003D710 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		84FF7CFC192631330003D710 /* DrupalLibTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = DrupalLibTests.xctest;
-			remoteRef = 84FF7CFB192631330003D710 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		842C6F061924DB8C0070751B /* Resources */ = {
@@ -357,6 +307,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		58594AE4C5ED4C598581EACD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8E469D35398C4018B4C4841E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		842C6F041924DB8C0070751B /* Sources */ = {
@@ -391,11 +374,6 @@
 			isa = PBXTargetDependency;
 			target = 842C6F071924DB8C0070751B /* SampleApp */;
 			targetProxy = 842C6F2E1924DB8D0070751B /* PBXContainerItemProxy */;
-		};
-		84FF7CFF192631DE0003D710 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DrupalLib;
-			targetProxy = 84FF7CFE192631DE0003D710 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -493,6 +471,7 @@
 		};
 		842C6F3B1924DB8D0070751B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DB61D8069F0437FBD223CEB /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -523,6 +502,7 @@
 		};
 		842C6F3C1924DB8D0070751B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DB61D8069F0437FBD223CEB /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

@@ -14,7 +14,7 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
-    #import <DrupalLib/DrupalSDK.h>
+    #import "DrupalSDK.h"
 
     #define kLembergPrimaryColor            [UIColor colorWithRed:0 green:152./255. blue:186./255. alpha:1]
 #endif

@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "DataManager.h"
-#import <DrupalLib/DrupalAPIManager.h>
+#import "DrupalAPIManager.h"
 
 
 @implementation AppDelegate
