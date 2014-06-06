@@ -80,13 +80,13 @@ Additional methods that you can use to implement custom workflow:
     
 Example:
 
-        [[DrupalAPIManager sharedDrupalAPIManager] postEntity:someEntity completeHandler:^(id object, NSError *error) {
-                                              if (error) {
-                                                  //    Something went wrong, log error
-                                              } else {
-                                                  //    Do something with object
-                                              }
-                                          }];
+    [[DrupalAPIManager sharedDrupalAPIManager] postEntity:someEntity completeHandler:^(id object, NSError *error) {
+        if (error) {
+            //    Something went wrong, log error
+        } else {
+            //    Do something with object
+        }
+    }];
 
 ###5. Other details
 ####ResponseData
